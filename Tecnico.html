@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Técnico - João Hartmann</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="Tecnico.html">Técnico</a>
+                    <a href="Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="capa-interna">
+        <h1>Técnico</h1>
+        <p>Selecione uma área do conhecimento para explorar os projetos e atividades.</p>
+    </section>
+
+    <div class="areas-container">
+        
+        <a href="materias/modelagem.html" class="modern-card lang">
+            <div class="card-image">
+                <img src="imagem/modelagem.jpg" alt="modelagem de sistemas">
+            </div>
+            <div class="card-content">
+                <h2>Modelagem de Sistemas</h2>
+                <span class="btn-modern">Ver Atividades</span>
+            </div>
+        </a>
+
+        <a href="materias/iot.html" class="modern-card math">
+            <div class="card-image">
+                <img src="imagem/IoT.jpg" alt="IoT (Internet das Coisas)">
+            </div>
+            <div class="card-content">
+                <h2>IoT (Internet das Coisas)</h2>
+                <span class="btn-modern">Ver Atividades</span>
+            </div>
+        </a>
+
+        <a href="materias/banco.html" class="modern-card nature">
+            <div class="card-image">
+                <img src="imagem/banco.jpg" alt="Banco de Dados">
+            </div>
+            <div class="card-content">
+                <h2>Banco de Dados</h2>
+                <span class="btn-modern">Ver Atividades</span>
+            </div>
+        </a>
+
+    </div>
+
+    <footer id="Contatos">
+<p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

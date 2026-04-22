@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Banco de Dados</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span
+                        class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="../Tecnico.html">Técnico</a>
+                    <a href="../Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="../contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="capa-interna">
+        <h1>Banco de Dados</h1>
+        <p>Bem-vindo(a) à seção de Banco de Dados. A organização, a estruturação e o gerenciamento eficiente da
+            informação são fundamentais para o desenvolvimento de sistemas tecnológicos. Nesta página, reuni um
+            compilado dos meus principais trabalhos, modelagens e projetos práticos que demonstram minha evolução e o
+            domínio dos conceitos trabalhados durante o ano letivo. Confira as atividades abaixo.</p>
+    </section>
+
+    <div class="abas-container">
+        <button class="aba-btn ativo" onclick="abrirTrimestre(event, 'trimestre1')">1º Trimestre</button>
+        <button class="aba-btn" onclick="abrirTrimestre(event, 'trimestre2')">2º Trimestre</button>
+        <button class="aba-btn" onclick="abrirTrimestre(event, 'trimestre3')">3º Trimestre</button>
+    </div>
+
+    <div id="trimestre1" class="aba-conteudo" style="display: block;">
+
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Banco de Dados</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+                    <img src="imagem/placeholder-bd.jpg" alt="Atividade" class="atividade-img">
+                    <div class="atividade-conteudo">
+                        <h3>Modelagem Conceitual</h3>
+                        <p>Desenvolvimento do diagrama Entidade-Relacionamento e script SQL inicial.</p>
+                        <a href="#" class="btn-card">Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="materia-secao bg-claro">
+            <div class="secao-header">
+                <h2>Modelagem de Sistemas</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+                    <img src="imagem/placeholder-uml.jpg" alt="Atividade" class="atividade-img">
+                    <div class="atividade-conteudo">
+                        <h3>Diagramas UML</h3>
+                        <p>Criação de Casos de Uso e Diagramas de Classes para documentar o sistema.</p>
+                        <a href="#" class="btn-card">Ver Documentação</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Desenvolvimento Web / Outros</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+                    <img src="imagem/placeholder-web.jpg" alt="Atividade" class="atividade-img">
+                    <div class="atividade-conteudo">
+                        <h3>Página Inicial em HTML/CSS</h3>
+                        <p>Primeiros passos na criação de uma interface de usuário responsiva.</p>
+                        <a href="#" class="btn-card">Ver Repositório</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="trimestre2" class="aba-conteudo">
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Em andamento...</h2>
+            </div>
+            <p style="text-align: center; color: #475569;">Atividades do 2º Trimestre em breve...</p>
+        </section>
+    </div>
+
+    <div id="trimestre3" class="aba-conteudo">
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Em andamento...</h2>
+            </div>
+            <p style="text-align: center; color: #475569;">Atividades do 3º Trimestre em breve...
+            </p>
+        </section>
+    </div>
+
+    <footer id="Contatos">
+        <p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>

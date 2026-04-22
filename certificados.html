@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Certificados - João Hartmann</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span
+                        class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="Tecnico.html">Técnico</a>
+                    <a href="Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="capa-interna">
+        <h1>Certificações e Cursos</h1>
+        <p style="text-align: center;">Aqui estão os certificados e cursos que obtenho ao longo da minha trajetória profissional.</p>
+
+        <!-- Container Principal de Certificados Premium -->
+        <div class="premium-certificados-grid">
+
+            <!-- CERTIFICADO 1: Desenvolvimento Web -->
+            <div class="premium-cert-item">
+                <div class="cert-header-section">
+                    <div class="cert-title-group">
+                        <h3 class="cert-title">Especialização em Serviços de Atacado e Varejo</h3>
+                        <div class="cert-organization">
+                            <i class="ph ph-buildings"></i>
+                            <span>SENAC</span>
+                        </div>
+                    </div>
+                    <div class="cert-metadata">
+                        <div class="cert-meta-item">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>Jun 2024</span>
+                        </div>
+                        <div class="cert-meta-item">
+                            <i class="ph ph-clock"></i>
+                            <span>1280 Horas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card com Flip -->
+                <div class="cert-flip-container">
+                    <div class="cert-flip-card" onclick="toggleFlip(event)">
+                        <!-- Frente do Certificado -->
+                        <div class="cert-flip-front">
+                            <img src="imagem/senac-frente.jpg" alt="Certificado Senac - Frente">
+                            <div class="flip-overlay">
+                                <span class="flip-text">Clique para ver o verso</span>
+                            </div>
+                        </div>
+                        <!-- Verso do Certificado -->
+                        <div class="cert-flip-back">
+                            <img src="imagem/senac-verso.jpg" alt="Certificado Senac - Verso">
+                            <div class="flip-overlay">
+                                <span class="flip-text">Clique para voltar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descrição e Techs -->
+                <div class="cert-content-section" >
+                    <p class="cert-description">Esta formação é focada na prática real do setor comercial e logístico. O aprendizado envolve desde a organização de estoques e abastecimento de mercadorias até o atendimento ao cliente e suporte administrativo. É uma experiência intensa que prepara para lidar com todo o fluxo de operação, conferência de produtos e o uso de tecnologias para agilizar os processos de venda.</p>
+                    <div class="cert-technologies">
+                        <span class="tech-tag">Gestão de Estoque</span>
+                        <span class="tech-tag">Atendimento ao Cliente</span>
+                        <span class="tech-tag">Rotina Comercial</span>
+                    </div>
+                </div>
+
+                <!-- Botão de Visualizar -->
+                <button class="cert-view-btn" onclick="openImageModal('imagem/senac-frente.jpg', 'Certificado Senac')">
+                    <i class="ph ph-magnifying-glass-plus"></i>
+                    <span>Ampliar</span>
+                </button>
+            </div>
+
+            <!-- CERTIFICADO 2: Administração Empresarial e Informática Avançada -->
+            <div class="premium-cert-item">
+                <div class="cert-header-section">
+                    <div class="cert-title-group">
+                        <h3 class="cert-title">Administração Empresarial e Informática Avançada</h3>
+                        <div class="cert-organization">
+                            <i class="ph ph-buildings"></i>
+                            <span>CEDUTECH</span>
+                        </div>
+                    </div>
+                    <div class="cert-metadata">
+                        <div class="cert-meta-item">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>mai 2024</span>
+                        </div>
+                        <div class="cert-meta-item">
+                            <i class="ph ph-clock"></i>
+                            <span>304 Horas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card com Flip -->
+                <div class="cert-flip-container" >
+                    <div class="cert-flip-card" onclick="toggleFlip(event)">
+                        <!-- Frente do Certificado -->
+                        <div class="cert-flip-front">
+                            <img src="imagem/cedu-frente.jpg" alt="Certificado CEDUTECH - Frente">
+                            <div class="flip-overlay">
+                                <span class="flip-text">Clique para ver o verso</span>
+                            </div>
+                        </div>
+                        <!-- Verso do Certificado -->
+                        <div class="cert-flip-back">
+                            <img src="imagem/cedu-verso.jpg" alt="Certificado CEDUTECH - Verso">
+                            <div class="flip-overlay">
+                                <span class="flip-text">Clique para voltar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descrição e Techs -->
+                <div class="cert-content-section">
+                    <p class="cert-description">Esta formação une gestão e tecnologia de forma prática. O conteúdo abrange áreas como financeiro, marketing e RH, além do domínio de ferramentas essenciais como Excel avançado e design. É um aprendizado focado em entender como uma empresa funciona e como usar a tecnologia para organizar processos e gerar resultados.</p>
+                    <div class="cert-technologies">
+                        <span class="tech-tag">Excel Avançado</span>
+                        <span class="tech-tag">Administração</span>
+                        <span class="tech-tag">Marketing e Design</span>
+                    </div>
+                </div>
+
+                <!-- Botão de Visualizar -->
+                <button class="cert-view-btn" onclick="openImageModal('imagem/cedu-frente.jpg', 'Certificado CEDUTECH')">
+                    <i class="ph ph-magnifying-glass-plus"></i>
+                    <span>Ampliar</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal para Visualização Ampliada -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-overlay" onclick="closeImageModal()"></div>
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeImageModal()">
+                <i class="ph ph-x"></i>
+            </button>
+            <img id="modalImage" src="" alt="Certificado Ampliado" class="modal-image">
+            <p id="modalTitle" class="modal-title"></p>
+        </div>
+    </div>
+    <footer id="Contatos">
+<p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

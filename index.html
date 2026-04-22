@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">  
+    <title>Portfolio João Hartmann</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="#">Início</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="Tecnico.html">Técnico</a>
+                    <a href="Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+    <section class="capa" id="inicio">
+        <div class="capa-conteudo">
+            <div class="capa-texto">
+                <!-- <span class="saudacao">Olá, eu sou</span> -->
+                <h1>João Victor Prange Hartmann</h1>
+
+                <div class="container-typing">
+                    <h2 class="typing-effect">Desenvolvedor em Formação</h2>
+                </div>
+
+                <p>Bem-vindo ao meu portfólio pessoal! Aqui você encontrará informações sobre mim, meus objetivos e meus
+                    projetos. Sinta-se à vontade para explorar e conhecer um pouco mais sobre minha jornada e minhas
+                    conquistas.</p>
+
+                <div class="tech-badges">
+                    <a class="badge" href="#Sobre">Sobre Mim</a></span>
+                    <a class="badge" href="#Curriculo">Curriculo</a></span>
+                    <a class="badge" href="#Portfolio">Portfólios</a></span>
+                </div>
+            </div>
+
+            <div class="capa-ilustracao">
+                <img src="imagem/logoSite.png" alt="Ilustração da Capa">
+            </div>
+        </div>
+
+        <a href="#Sobre" class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+            <span class="text-scroll">Role para baixo</span>
+        </a>
+    </section>
+
+    <section class="sobre section" id="Sobre">
+        <div class="sobre-layout">
+            <div class="sobre-caixa-texto">
+                <h2>Sobre Mim</h2>
+                <p>Me chamo João Victor, sou uma pessoa proativa e gosto de trabalhar em equipes colaborativas. Já atuei
+                    como jovem aprendiz em algumas empresas, o que me proporcionou experiência e desenvolvimento
+                    profissional. Sou bastante eclético quando se trata de música e estou sempre ouvindo algo sempre que
+                    tenho oportunidade. Valorizo muito a companhia de pessoas que me fazem bem, como familiares e
+                    amigos.
+                    Além disso, sempre que posso, procuro ajudar aqueles que estão ao meu redor, pois me preocupo
+                    genuinamente com o bem-estar dos outros.</p>
+            </div>
+
+            <img src="imagem/perfil.png" alt="Foto de João Hartmann" class="foto-retangular">
+        </div>
+
+        <!-- <div class="secao object bg-cinza"> -->
+            <div class="sobre-layout">
+                <div class="sobre-caixa-texto">
+                    <h2>Objetivos Pessoais e Acadêmicos</h2>
+                    <p>Desde pequeno, sempre tive o objetivo de conquistar minhas próprias coisas, como minha casa, meu
+                        carro,
+                        minha família e um bom trabalho. Mas, além dos bens materiais, também quero criar boas
+                        lembranças com
+                        minha família, meus amigos e até mesmo em momentos sozinho. <br>
+                        Para isso, primeiro preciso terminar o Ensino Médio e depois entrar na faculdade. Tenho
+                        interesse tanto
+                        em Engenharia de Software, porque gosto de tecnologia, quanto em Técnico Agrícola, por conta do
+                        meu
+                        apreço pelo campo. São duas áreas que me chamam a atenção e nas quais posso construir um futuro.
+                    </p>
+                </div>
+            </div>
+        <!-- </div> -->
+    </section>
+
+    <section id="Curriculo">
+        <div class="secao bg-cinza">
+            <h2>Currículo</h2>
+            <div class="container-cv">
+                <iframe class="info"
+                    src="https://docs.google.com/document/d/e/2PACX-1vR16vspJBKK6oMzxIoc_oyeqbeeuqYtteNw40t2XeHsIypJbDuHbUcJyeOnImxZBjxvp7_gcQhhRZve/pub?embedded=true"></iframe>
+            </div>
+            <div class="capa-botoes">
+                <a href="arquivos/CV_JoãoHartmann.pdf" download="CV_JoãoHartmann.pdf" target="_blank"
+                    class="btn btn-secundario">Baixar Currículo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="Port" id="Portfolio">
+        <div class="secao bg-claro">
+            <h2>Portfólio Primeiro Ano</h2>
+               <div class="projeto-card">
+                <div class="navegador-topo">
+                    <span class="bolinha vermelha"></span>
+                    <span class="bolinha amarela"></span>
+                    <span class="bolinha verde"></span>
+                </div>
+                <div class="projeto-imagem">
+                    <img src="imagem/print-portfolio-canva.png" alt="Portfólio 2º Ano">
+                    <div class="projeto-overlay">
+                        <a href="https://www.canva.com/design/DAGWi0FTwbo/BiqIFRpTSy80Ek6KlBGvPQ/view"
+                            target="_blank" class="btn-acessar">Ver Site Completo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="descricao">Este é o Portfólio do primeiro ano onde utilizamos o Canva para criar um design moderno
+                e atraente, onde estamos desenvolvendo nossas habilidades de design e criatividade.</p>
+        </div>
+
+        <div class="secao bg-claro">
+            <h2>Portfólio Segundo Ano</h2>
+
+            <div class="projeto-card">
+                <div class="navegador-topo">
+                    <span class="bolinha vermelha"></span>
+                    <span class="bolinha amarela"></span>
+                    <span class="bolinha verde"></span>
+                </div>
+                <div class="projeto-imagem">
+                    <img src="imagem/print-portfolio-google.png" alt="Portfólio 2º Ano">
+                    <div class="projeto-overlay">
+                        <a href="https://sites.google.com/estudante.sesisenai.org.br/portfolio-joaohartmann-2025/in%C3%ADcio"
+                            target="_blank" class="btn-acessar">Ver Site Completo</a>
+                    </div>
+                </div>
+            </div>
+            <p class="descricao">Este é o Portfólio do segundo ano onde utilizamos o Google Sites para criar um design
+                mais profissional e funcional.</p>
+        </div>
+    </section>
+
+    <footer id="Contatos">
+<p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

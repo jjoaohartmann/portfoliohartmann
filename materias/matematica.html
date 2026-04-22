@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Matemática</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span
+                        class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="../Tecnico.html">Técnico</a>
+                    <a href="../Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="../contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="capa-interna">
+        <h1>Matemática</h1>
+        <p>Bem-vindo(a) à seção de Matemática. O desenvolvimento do raciocínio lógico e a capacidade de resolução de
+            problemas são fundamentais para a compreensão exata do nosso entorno e das tecnologias. Nesta página, reuni
+            um compilado dos meus principais trabalhos, exercícios analíticos e projetos práticos que demonstram minha
+            evolução e o domínio dos conceitos trabalhados durante o ano letivo. Confira as atividades abaixo.</p>
+    </section>
+
+    <div class="abas-container">
+        <button class="aba-btn ativo" onclick="abrirTrimestre(event, 'trimestre1')">1º Trimestre</button>
+        <button class="aba-btn" onclick="abrirTrimestre(event, 'trimestre2')">2º Trimestre</button>
+        <button class="aba-btn" onclick="abrirTrimestre(event, 'trimestre3')">3º Trimestre</button>
+    </div>
+
+    <div id="trimestre1" class="aba-conteudo" style="display: block;">
+
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Filme Quebrando a Banca</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+                    <iframe class="atividade-video"
+                        src="https://docs.google.com/document/d/e/2PACX-1vT9Vfzvzmuh64-szNNgipp4W9zwaWDiyA1t5m3NK6jqrUE05ZQuLyoaOHv9gZLUDFl4LBeqws3Wi5eS/pub?embedded=true"
+                        frameborder="0" allowfullscreen></iframe>
+                    <div class="atividade-conteudo">
+                        <h3>Relatorio Sobre o Filme Quebrando a Banca</h3>
+                        <div class="atividade-textos">
+
+                            <div class="coluna-descricao">
+                                <h4>Descrição</h4>
+                                <p>A atividade consistiu na análise do filme "Quebrando a Banca" como ferramenta para o
+                                    estudo da Probabilidade, permitindo compreender como a matemática é aplicada na
+                                    previsão de resultados e na análise de riscos em situações reais. Após a exploração
+                                    dos conceitos matemáticos presentes na trama, foram realizadas atividades práticas
+                                    de interpretação e a criação de uma proposta de roteiro original que integra a
+                                    lógica dos números à narrativa criativa. Analiticamente, o exercício destaca-se por
+                                    tornar o aprendizado mais dinâmico, porém revela uma importante reflexão sobre a
+                                    ética: o filme demonstra que o domínio técnico da matemática, quando motivado apenas
+                                    pela ganância, pode levar a escolhas perigosas. Assim, a atividade evidencia que o
+                                    conhecimento acadêmico deve ser acompanhado de integridade, mostrando que a
+                                    responsabilidade nas decisões é tão importante quanto a precisão dos cálculos.</p>
+                            </div>
+
+                            <div class="coluna-habilidades">
+                                <h4>Habilidades</h4>
+                                <p>C5 - Aplicar o pensamento probabilístico para quantificar e fazer previsões. <br>
+                                    H31 - Reconhecer fenômenos de caráter aleatório e a importância da probabilidade.
+                                    <br>
+                                    H32 - Identificar modelos que fazem uso de estatísticas e probabilidades.
+                                </p>
+                            </div>
+
+                        </div>
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vT9Vfzvzmuh64-szNNgipp4W9zwaWDiyA1t5m3NK6jqrUE05ZQuLyoaOHv9gZLUDFl4LBeqws3Wi5eS/pub?embedded=true"
+                            target="_blank" class="btn-card direction">Ver relatório
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="materia-secao ">
+            <div class="secao-header">
+                <h2>Criação de um Jogo de Probabilidade</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+
+                    <iframe class="atividade-video" loading="lazy"
+                        src="https://www.canva.com/design/DAHHBmN290g/rEAcgYVMYZTs4UVOLZNx-Q/view?embed"
+                        allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+
+                    <div class="atividade-conteudo">
+                        <h3>Criação do jogo</h3>
+                        <div class="atividade-textos">
+
+                            <div class="coluna-descricao">
+                                <h4>Descrição</h4>
+                                <p>A atividade "Criando a Banca da Matemática" desafia os estudantes a desenvolverem
+                                    jogos originais que utilizem conceitos de Análise Combinatória e Probabilidade,
+                                    inspirando-se na estratégia e lógica do filme Quebrando a Banca. Em grupos, os
+                                    alunos devem criar regras claras e protótipos que envolvam cálculos como arranjos ou
+                                    combinações, testando a viabilidade do jogo através da interação com os colegas.
+                                    Analiticamente, a proposta é muito eficiente por transformar fórmulas abstratas em
+                                    ferramentas práticas de tomada de decisão e estratégia, incentivando a organização e
+                                    a criatividade. Além disso, o exercício promove uma importante reflexão sobre a
+                                    ética, pois ao simular o ambiente de apostas, destaca que o domínio da matemática
+                                    deve ser usado com responsabilidade, mostrando que o sucesso real depende tanto da
+                                    competência técnica quanto da integridade nas escolhas.</p>
+                            </div>
+
+                            <div class="coluna-habilidades">
+                                <h4>Habilidades</h4>
+                                <p>C5: Aplicar o pensamento probabilístico para quantificar e fazer previsões em
+                                    situações aplicadas a diferentes áreas do conhecimento e da vida cotidiana. <br>
+                                    H30: Identificar dados, regularidades e relações numa situação que envolva o
+                                    raciocínio combinatório, utilizando os processos de contagem. <br>
+                                    H31: Reconhecer fenômenos e eventos (naturais, científicos, tecnológicos e/ou
+                                    sociais) de caráter aleatório, compreendendo o significado e a importância da
+                                    probabilidade como meio de prever resultados.
+
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="btn-acesso">
+                            <a href="https://wordwall.net/pt/resource/108335034/arcadismo" target="_blank"
+                                class="btn-card">Jogo Literatura</a>
+                            <a href="https://wordwall.net/pt/resource/108336315/feedback-i-jogo-arcadismo"
+                                target="_blank" class="btn-card">Feedback Jogo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="trimestre2" class="aba-conteudo">
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Em andamento...</h2>
+            </div>
+            <p style="text-align: center; color: #475569;">Atividades do 2º Trimestre em breve...</p>
+        </section>
+    </div>
+
+    <div id="trimestre3" class="aba-conteudo">
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Em andamento...</h2>
+            </div>
+            <p style="text-align: center; color: #475569;">Atividades do 3º Trimestre em breve...
+            </p>
+        </section>
+    </div>
+
+
+    <footer id="Contatos">
+        <p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>
