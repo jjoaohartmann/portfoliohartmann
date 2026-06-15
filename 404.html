@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>404 — Página não encontrada | João Hartmann</title>
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loading-screen">
+        <img src="imagem/logoSite.png" alt="Logo" class="loading-logo">
+        <span class="loading-nome">João Hartmann</span>
+        <div class="loading-track"><div class="loading-fill"></div></div>
+    </div>
+
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="Tecnico.html">Técnico</a>
+                    <a href="Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <div class="page-404">
+        <div class="erro-codigo">404</div>
+        <h1 class="erro-titulo">Página não encontrada</h1>
+        <p class="erro-desc">Parece que esta página foi para explorar novos horizontes... ou simplesmente não existe. Que tal voltar para o início?</p>
+        <a href="index.html" class="erro-btn">← Voltar ao Início</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
