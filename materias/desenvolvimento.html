@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Desenvolvimento de sistemas</title>
+    <link rel="icon" type="image/png" href="../imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Internet das Coisas (IoT)</title>
 </head>
+
 <body>
-    
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span
+                        class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="../Tecnico.html">Técnico</a>
+                    <a href="../Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="../contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="capa-interna">
+        <h1>Internet das Coisas (IoT)</h1>
+        <p>Bem-vindo(a) à seção de Internet das Coisas (IoT). A integração entre o mundo físico e o digital por meio de
+            dispositivos conectados é fundamental para a inovação e a automação de processos. Nesta página, reuni um
+            compilado dos meus principais trabalhos, protótipos e projetos práticos que demonstram minha evolução e o
+            domínio dos conceitos trabalhados durante o ano letivo. Confira as atividades abaixo.</p>
+    </section>
+
+    <div id="trimestre1" class="aba-conteudo" style="display: block;">
+
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Grand Prix SENAI</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+                    <iframe class="atividade-video" src="https://www.youtube.com/embed/ZBz01WPrAFA?si=AXKXQVU6M6j1usld"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="atividade-conteudo">
+                        <h3>Projeto do Grand Prix SENAI</h3>
+                        <p>Participamos do Grand Prix de inovação, onde recebemos o desafio da Petrobras para criar uma
+                            solução de descarbonização na indústria de óleo e gás. Para resolver esse problema ambiental
+                            urgente de forma realista, idealizamos um sistema de filtros para as chaminés das fábricas
+                            que transforma os resíduos capturados em "ecoblocos" (tijolos ecológicos). A entrega do
+                            projeto envolveu a criação de um modelo de negócios no Lean Canvas, um vídeo de apresentação
+                            (Pitch) e o protótipo da ideia, que contou com o desenvolvimento de um site de
+                            monitoramento. Foi uma experiência incrível de trabalho em equipe, que nos deu uma ótima
+                            visão prática para o mercado de trabalho e nos permitiu aprimorar nossas habilidades de
+                            programação em HTML, CSS e JavaScript, sempre com o foco em criar uma interface amigável,
+                            funcional e fácil de usar.</p>
+                        <div class="btn-acesso">
+                            <a href="https://www.youtube.com/embed/ZBz01WPrAFA?si=AXKXQVU6M6j1usld" target="_blank"
+                                class="btn-card">Ver
+                                pitch</a>
+                            <a href="https://www.youtube.com/embed/tOYvwRBphLE?si=I3Hn85LBcOkWw1BV" target="_blank"
+                                class="btn-card">Ver
+                                prototipo</a>
+                            <a href="../arquivos/lean_canvas.pdf" download="Lean Canvas" target="_blank"
+                                class="btn-card">Ver canva
+                                leans</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer id="Contatos">
+        <p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../script.js"></script>
 </body>
+
 </html>
