@@ -328,3 +328,15 @@
 .btn-card.direction {
     margin-top: 12px;
 }
+
+.imagem-atividade {
+    display: block;
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    max-height: 380px;
+    object-fit: contain;
+    margin: 24px auto 0;
+    border-radius: var(--radius-md);
+    border: var(--border-glass);
+}
