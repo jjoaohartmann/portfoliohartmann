@@ -1,0 +1,164 @@
+/* ==========================================================================
+   NAVBAR — Cabeçalho, Dropdown e Menu Hambúrguer
+   ========================================================================== */
+
+/* =========================================
+   2. CABEÇALHO / NAVBAR (Glassmorphism)
+   ========================================= */
+.nav-bar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--border-glass);
+    padding: 14px 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 820px;
+    width: 92%;
+    border-radius: var(--radius-pill);
+    z-index: 9999;
+    box-shadow: var(--shadow-md), var(--shadow-glow-sm);
+    transition: box-shadow 0.4s ease;
+}
+
+.nav-bar:hover {
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.topic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.topic a {
+    color: var(--clr-text);
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.topic a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--grad-accent);
+    border-radius: 2px;
+    transition: width 0.3s var(--ease-out);
+}
+
+.topic a:hover { color: var(--clr-violet-lt); }
+.topic a:hover::after { width: 100%; }
+
+/* Botão "Entre em Contato" */
+.topic li:last-child a {
+    background: var(--grad-accent);
+    color: var(--clr-white) !important;
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 18px rgba(79, 70, 229, 0.45);
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+}
+
+.topic li:last-child a::after { display: none; }
+
+.topic li:last-child a:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 28px rgba(79, 70, 229, 0.65);
+}
+
+/* =========================================
+   MENU DROPDOWN
+   ========================================= */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.seta { display: inline-block; transition: transform 0.3s ease; }
+
+.dropdown-conteudo {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(8, 8, 28, 0.97);
+    backdrop-filter: blur(14px);
+    min-width: 200px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    z-index: 1000;
+    border: var(--border-glass);
+    box-shadow: var(--shadow-md);
+    animation: dropIn 0.2s var(--ease-out) both;
+}
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.dropdown-conteudo a {
+    color: var(--clr-text) !important;
+    padding: 13px 20px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-conteudo a::after { display: none; }
+
+.dropdown-conteudo a:hover {
+    background: rgba(79, 70, 229, 0.18);
+    border-left-color: var(--clr-violet);
+    padding-left: 26px;
+    color: var(--clr-violet-lt) !important;
+}
+
+.dropdown-conteudo.mostrar { display: block; }
+
+/* =========================================
+   MENU HAMBÚRGUER (Mobile)
+   ========================================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 10001;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--clr-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.ativo span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.ativo span:nth-child(2) { opacity: 0; }
+.hamburger.ativo span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }

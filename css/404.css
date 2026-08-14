@@ -1,0 +1,135 @@
+/* ==========================================================================
+   404 — Página de Erro Estilizada
+   ========================================================================== */
+
+.page-404 {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Grades de fundo inspiradas em terminal */
+.page-404::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(79, 70, 229, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+/* Brilho radial central */
+.page-404::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79,70,229,0.15) 0%, transparent 65%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+/* Número 404 gigante */
+.erro-codigo {
+    font-size: clamp(100px, 20vw, 200px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -8px;
+    position: relative;
+    z-index: 2;
+    /* Gradiente + outline */
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 40%, #00f5d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Animação de flutuação */
+    animation: float-404 5s ease-in-out infinite;
+    /* Sombra de texto "glitch" */
+    filter: drop-shadow(0 0 30px rgba(79,70,229,0.5)) drop-shadow(2px 2px 0px rgba(0,245,212,0.2));
+}
+
+@keyframes float-404 {
+    0%, 100% { transform: translateY(0px) rotate(-1deg); }
+    50%       { transform: translateY(-16px) rotate(1deg); }
+}
+
+/* Linha decorativa sob o número */
+.erro-codigo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--grad-glow);
+    border-radius: 2px;
+    margin: 12px auto 0;
+    box-shadow: 0 0 12px rgba(79,70,229,0.6);
+    -webkit-text-fill-color: initial;
+    filter: none;
+}
+
+.erro-titulo {
+    font-size: clamp(22px, 4vw, 38px);
+    font-weight: 800;
+    color: var(--clr-white);
+    margin: 24px 0 16px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -0.5px;
+}
+
+.erro-desc {
+    max-width: 500px;
+    color: var(--clr-text-muted);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.erro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 34px;
+    background: var(--grad-accent);
+    color: var(--clr-white);
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 6px 24px rgba(79, 70, 229, 0.45);
+    transition: all 0.3s var(--ease-spring);
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.3px;
+}
+
+.erro-btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 12px 36px rgba(79, 70, 229, 0.65);
+    color: var(--clr-white);
+}
+
+/* Etiqueta de código de erro — detalhe tech */
+.erro-titulo::before {
+    content: '// ERROR 404';
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--clr-indigo-lt);
+    margin-bottom: 8px;
+    font-family: 'Courier New', monospace;
+    opacity: 0.7;
+}
