@@ -13,7 +13,8 @@
     <link rel="icon" type="image/png" href="imagem/logoSite.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Certificados - João Hartmann</title>
 </head>
@@ -23,7 +24,9 @@
     <div class="loading-screen" id="loading-screen">
         <img src="imagem/logoSite.png" alt="Logo" class="loading-logo">
         <span class="loading-nome">João Hartmann</span>
-        <div class="loading-track"><div class="loading-fill"></div></div>
+        <div class="loading-track">
+            <div class="loading-fill"></div>
+        </div>
     </div>
     <header class="nav-bar">
         <ul class="topic">
@@ -43,7 +46,8 @@
 
     <section class="capa-interna">
         <h1>Certificações e Cursos</h1>
-        <p style="text-align: center;">Aqui estão os certificados e cursos que obtenho ao longo da minha trajetória profissional.</p>
+        <p style="text-align: center;">Aqui estão os certificados e cursos que obtenho ao longo da minha trajetória
+            profissional.</p>
 
         <!-- Container Principal de Certificados Premium -->
         <div class="premium-certificados-grid">
@@ -91,8 +95,15 @@
                 </div>
 
                 <!-- Descrição e Techs -->
-                <div class="cert-content-section" >
-                    <p class="cert-description">Esta formação é focada na prática real do setor comercial e logístico. O aprendizado envolve desde a organização de estoques e abastecimento de mercadorias até o atendimento ao cliente e suporte administrativo. É uma experiência intensa que prepara para lidar com todo o fluxo de operação, conferência de produtos e o uso de tecnologias para agilizar os processos de venda.</p>
+                <div class="cert-content-section">
+                    <p class="cert-description" id="descSenac">Esta formação é focada na prática real do setor comercial
+                        e logístico. O aprendizado envolve desde a organização de estoques e abastecimento de
+                        mercadorias até o atendimento ao cliente e suporte administrativo. É uma experiência intensa que
+                        prepara para lidar com todo o fluxo de operação, conferência de produtos e o uso de tecnologias
+                        para agilizar os processos de venda.</p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descSenac', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
                     <div class="cert-technologies">
                         <span class="tech-tag">Gestão de Estoque</span>
                         <span class="tech-tag">Atendimento ao Cliente</span>
@@ -130,7 +141,7 @@
                 </div>
 
                 <!-- Card com Flip -->
-                <div class="cert-flip-container" >
+                <div class="cert-flip-container">
                     <div class="cert-flip-card" onclick="toggleFlip(event)">
                         <!-- Frente do Certificado -->
                         <div class="cert-flip-front">
@@ -151,7 +162,13 @@
 
                 <!-- Descrição e Techs -->
                 <div class="cert-content-section">
-                    <p class="cert-description">Esta formação une gestão e tecnologia de forma prática. O conteúdo abrange áreas como financeiro, marketing e RH, além do domínio de ferramentas essenciais como Excel avançado e design. É um aprendizado focado em entender como uma empresa funciona e como usar a tecnologia para organizar processos e gerar resultados.</p>
+                    <p class="cert-description" id="descCedutech">Esta formação une gestão e tecnologia de forma
+                        prática. O conteúdo abrange áreas como financeiro, marketing e RH, além do domínio de
+                        ferramentas essenciais como Excel avançado e design. É um aprendizado focado em entender como
+                        uma empresa funciona e como usar a tecnologia para organizar processos e gerar resultados.</p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descCedutech', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
                     <div class="cert-technologies">
                         <span class="tech-tag">Excel Avançado</span>
                         <span class="tech-tag">Administração</span>
@@ -160,12 +177,13 @@
                 </div>
 
                 <!-- Botão de Visualizar -->
-                <button class="cert-view-btn" onclick="openImageModal('imagem/cedu-frente.jpg', 'Certificado CEDUTECH')">
+                <button class="cert-view-btn"
+                    onclick="openImageModal('imagem/cedu-frente.jpg', 'Certificado CEDUTECH')">
                     <i class="ph ph-magnifying-glass-plus"></i>
                     <span>Ampliar</span>
                 </button>
             </div>
-<!-- CERTIFICADO 3: Level One (Certificado de Participação) -->
+            <!-- CERTIFICADO 3: Level One (Certificado de Participação) -->
             <div class="premium-cert-item">
                 <div class="cert-header-section">
                     <div class="cert-title-group">
@@ -195,7 +213,18 @@
                 <!-- Descrição e Techs -->
                 <div class="cert-content-section">
                     <!-- DESCRIÇÃO: preencha o parágrafo abaixo com o texto do certificado. -->
-                    <p class="cert-description"></p>
+                    <p class="cert-description" id="descLevelOne">Foi um evento que estava na sua Terceira edição que
+                        ocorre de forma gratuita, reunindo diversas empresas da area tecnologica com o intuito de um
+                        network entre estudantes e empresas podendo ter seu "start" na carreira, durante o evento teve
+                        palestras de grandes pessoas como o Moacir Antonio Marafon(fundador da softplan), Thalita
+                        Meneghim que é influenciadora, começou sua carreira no teatro e com muita persistência chegou
+                        onde tanto queria, e também o Caio Amato que hoje é o Presidente Global da oakley, mas também
+                        passou em outras empresas como a mizuno e adidas sempre trazendo inovação dentro das empresas.
+                        Com isso mostranto que é um grande evento que tras oportunidade de carreira.
+                    </p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descLevelOne', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
                     <div class="cert-technologies">
                         <span class="tech-tag">Participação</span>
                     </div>
@@ -203,7 +232,8 @@
 
                 <!-- Botões: Ampliar (modal) e Abrir PDF (original em nova aba) -->
                 <div class="cert-actions">
-                    <button class="cert-view-btn" onclick="openImageModal('imagem/level-one-participacao.jpg', 'Certificado - Level One')">
+                    <button class="cert-view-btn"
+                        onclick="openImageModal('imagem/level-one-participacao.jpg', 'Certificado - Level One')">
                         <i class="ph ph-magnifying-glass-plus"></i>
                         <span>Ampliar</span>
                     </button>
@@ -229,7 +259,7 @@
         </div>
     </div>
     <footer id="Contatos">
-<p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+        <p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
     </footer>
     <script src="script.js"></script>
 </body>

@@ -143,10 +143,47 @@
 
 .cert-description {
     font-size: 14px;
+    text-align: justify;
     line-height: 1.75;
     color: var(--clr-text-muted);
     margin: 0;
+    /* Recorte a 3 líneas con "Ver más/Ver menos" */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
+.cert-description.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+}
+
+.cert-desc-toggle {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    color: var(--clr-indigo-lt);
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cert-desc-toggle:hover {
+    background: rgba(79, 70, 229, 0.12);
+    transform: translateY(-1px);
+}
+
+.cert-desc-toggle i { font-size: 14px; }
 
 .cert-technologies {
     display: flex;

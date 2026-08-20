@@ -325,6 +325,13 @@ function toggleFlip(event) {
     event.currentTarget.classList.toggle('flipped');
 }
 
+function toggleDescricao(idDescricao, boton) {
+    var el = document.getElementById(idDescricao);
+    var expandido = el.classList.toggle('expanded');
+    var etiqueta = boton.querySelector('span');
+    etiqueta.textContent = expandido ? 'Ver menos' : 'Ver mais';
+}
+
 function openImageModal(imageSrc, title) {
     var modal = document.getElementById('imageModal');
     var modalImage = document.getElementById('modalImage');
