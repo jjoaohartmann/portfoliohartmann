@@ -147,7 +147,6 @@
     line-height: 1.75;
     color: var(--clr-text-muted);
     margin: 0;
-    /* Recorte a 3 líneas con "Ver más/Ver menos" */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
