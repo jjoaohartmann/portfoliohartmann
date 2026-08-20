@@ -170,6 +170,19 @@
     transform: translateY(-2px);
 }
 
+/* Contenedor de acciones del certificado (botones lado a lado) */
+.cert-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 24px 24px;
+}
+
+.cert-actions .cert-view-btn {
+    margin: 0;
+}
+
 .cert-view-btn {
     margin: 0 24px 24px;
     padding: 12px 24px;
