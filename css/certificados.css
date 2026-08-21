@@ -133,6 +133,19 @@
     border: var(--border-glass);
 }
 
+.cert-image-container {
+    padding: 20px;
+}
+
+.cert-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
+    border: var(--border-glass);
+    box-shadow: var(--shadow-sm);
+}
+
 .cert-content-section {
     padding: 20px 24px;
     flex-grow: 1;
@@ -328,3 +341,4 @@
     font-weight: 600;
     border-top: var(--border-glass);
 }
+
