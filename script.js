@@ -153,26 +153,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* =========================================
        CURSOR PERSONALIZADO — TECH / RADAR
+       (Ativado via botão discreto no rodapé)
        ========================================= */
-    if (window.matchMedia('(pointer: fine)').matches) {
+    var cursorAtivo = false;
+    var dot = null, ring = null;
+    var mouseX = 0, mouseY = 0;
+    var ringX = 0, ringY = 0;
+    var animacaoRing = null;
+
+    function ativarCursor() {
+        if (cursorAtivo || !window.matchMedia('(pointer: fine)').matches) return;
+        cursorAtivo = true;
         document.body.classList.add('cursor-custom');
 
-        var dot = document.createElement('div');
-        var ring = document.createElement('div');
+        dot = document.createElement('div');
+        ring = document.createElement('div');
         dot.className = 'cursor-dot';
         ring.className = 'cursor-ring';
         document.body.appendChild(dot);
         document.body.appendChild(ring);
 
-        var mouseX = 0, mouseY = 0;
-        var ringX = 0, ringY = 0;
-
-        document.addEventListener('mousemove', function (e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            dot.style.left = mouseX + 'px';
-            dot.style.top = mouseY + 'px';
-        });
+        document.addEventListener('mousemove', moverCursor);
+        document.addEventListener('mousedown', cursorClickDown);
+        document.addEventListener('mouseup', cursorClickUp);
+        document.addEventListener('mouseleave', cursorFora);
+        document.addEventListener('mouseenter', cursorDentro);
 
         // Anel com lag suave (efeito radar)
         function animateRing() {
@@ -180,39 +185,82 @@ document.addEventListener('DOMContentLoaded', function () {
             ringY += (mouseY - ringY) * 0.10;
             ring.style.left = ringX + 'px';
             ring.style.top = ringY + 'px';
-            requestAnimationFrame(animateRing);
+            animacaoRing = requestAnimationFrame(animateRing);
         }
         animateRing();
 
-        // Atualiza hover em elementos interativos dinamicamente
-        function bindCursorHover() {
-            var interativos = 'a, button, [onclick], input, textarea, select, label, .badge, .btn, .cert-view-btn, .aba-btn, .modern-card, .card-info, .botao-enviar, .tool-badge, .skill-tag-badge, .erro-btn, .skill-card';
-            document.querySelectorAll(interativos).forEach(function (el) {
-                if (el._cursorBound) return;
-                el._cursorBound = true;
-                el.addEventListener('mouseenter', function () {
-                    dot.classList.add('hover');
-                    ring.classList.add('hover');
-                });
-                el.addEventListener('mouseleave', function () {
-                    dot.classList.remove('hover');
-                    ring.classList.remove('hover');
-                });
-            });
-        }
         bindCursorHover();
+    }
 
-        // Click feedback — pulso de luz
-        document.addEventListener('mousedown', function () { dot.classList.add('click'); });
-        document.addEventListener('mouseup', function () { dot.classList.remove('click'); });
+    function desativarCursor() {
+        if (!cursorAtivo) return;
+        cursorAtivo = false;
+        document.body.classList.remove('cursor-custom');
 
-        // Esconde fora da janela
-        document.addEventListener('mouseleave', function () {
-            dot.style.opacity = '0'; ring.style.opacity = '0';
+        if (dot) { dot.remove(); dot = null; }
+        if (ring) { ring.remove(); ring = null; }
+        if (animacaoRing) { cancelAnimationFrame(animacaoRing); animacaoRing = null; }
+
+        document.removeEventListener('mousemove', moverCursor);
+        document.removeEventListener('mousedown', cursorClickDown);
+        document.removeEventListener('mouseup', cursorClickUp);
+        document.removeEventListener('mouseleave', cursorFora);
+        document.removeEventListener('mouseenter', cursorDentro);
+    }
+
+    function moverCursor(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+    }
+
+    function cursorClickDown() { dot.classList.add('click'); }
+    function cursorClickUp() { dot.classList.remove('click'); }
+    function cursorFora() { dot.style.opacity = '0'; ring.style.opacity = '0'; }
+    function cursorDentro() { dot.style.opacity = '1'; ring.style.opacity = '1'; }
+
+    // Atualiza hover em elementos interativos dinamicamente
+    function bindCursorHover() {
+        var interativos = 'a, button, [onclick], input, textarea, select, label, .badge, .btn, .cert-view-btn, .aba-btn, .modern-card, .card-info, .botao-enviar, .tool-badge, .skill-tag-badge, .erro-btn, .skill-card';
+        document.querySelectorAll(interativos).forEach(function (el) {
+            if (el._cursorBound) return;
+            el._cursorBound = true;
+            el.addEventListener('mouseenter', function () {
+                dot.classList.add('hover');
+                ring.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', function () {
+                dot.classList.remove('hover');
+                ring.classList.remove('hover');
+            });
         });
-        document.addEventListener('mouseenter', function () {
-            dot.style.opacity = '1'; ring.style.opacity = '1';
+    }
+
+    // Botão discreto no rodapé
+    var footer = document.querySelector('footer');
+    if (footer) {
+        var cursorBtn = document.createElement('button');
+        cursorBtn.className = 'cursor-toggle-btn';
+        cursorBtn.setAttribute('aria-label', 'Ativar/Desativar cursor personalizado');
+        cursorBtn.setAttribute('title', 'Ativar/Desativar cursor personalizado');
+        cursorBtn.innerHTML = '<span class="cursor-toggle-icon">◉</span>';
+        footer.appendChild(cursorBtn);
+
+        cursorBtn.addEventListener('click', function () {
+            if (cursorAtivo) {
+                desativarCursor();
+                localStorage.setItem('cursorPersonalizado', 'desativado');
+            } else {
+                ativarCursor();
+                localStorage.setItem('cursorPersonalizado', 'ativado');
+            }
         });
+    }
+
+    // Restaura preferência salva (padrão: desativado)
+    if (localStorage.getItem('cursorPersonalizado') === 'ativado') {
+        ativarCursor();
     }
 
     /* =========================================
