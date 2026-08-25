@@ -345,16 +345,17 @@
 
                     <!-- Carrossel de fotos do Mural interativo -->
                     <div class="carrossel-mural" data-carrossel>
-                        <!-- TODO: substituir as URLs de exemplo (picsum.photos)
-                             pelas URLs reais das fotos do mural (Drive) -->
+                        <!-- TODO: substituir os placeholders pelas URLs reais das 3 fotos do mural (Drive)
+                             e trocar URL_DO_VIDEO pelo vídeo real -->
                         <div class="carrossel-visualizador" data-visualizador>
                             <div class="carrossel-faixa" data-faixa>
-                                <div class="carrossel-slide"><img src="https://picsum.photos/seed/mural1/1200/750" alt="Foto 1 do mural interativo"></div>
-                                <div class="carrossel-slide"><img src="https://picsum.photos/seed/mural2/1200/750" alt="Foto 2 do mural interativo"></div>
-                                <div class="carrossel-slide"><img src="https://picsum.photos/seed/mural3/1200/750" alt="Foto 3 do mural interativo"></div>
-                                <div class="carrossel-slide"><img src="https://picsum.photos/seed/mural4/1200/750" alt="Foto 4 do mural interativo"></div>
-                                <div class="carrossel-slide"><img src="https://picsum.photos/seed/mural5/1200/750" alt="Foto 5 do mural interativo"></div>
-                                <div class="carrossel-slide"><img src="https://picsum.photos/seed/mural6/1200/750" alt="Foto 6 do mural interativo"></div>
+                                <div class="carrossel-slide"><img src="../imagem/carrosel1.jpeg" alt="Foto 1 do mural interativo"></div>
+                                <div class="carrossel-slide"><img src="../imagem/carrosel2.jpeg" alt="Foto 2 do mural interativo"></div>
+                                <div class="carrossel-slide"><img src="../imagem/carrosel3.jpeg" alt="Foto 3 do mural interativo"></div>
+                                <!-- TODO: trocar pela URL real do vídeo (o auto-avanço pausa neste slide) -->
+                                <div class="carrossel-slide">
+                                    <video src="../imagem/videocarrosel.mp4" controls muted playsinline preload="metadata" controlslist="nodownload"></video>
+                                </div>
                             </div>
                         </div>
                         <button class="carrossel-btn carrossel-prev" type="button" data-anterior aria-label="Foto anterior">&#10094;</button>

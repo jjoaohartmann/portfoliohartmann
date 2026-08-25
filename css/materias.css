@@ -398,6 +398,14 @@
     display: block;
 }
 
+.carrossel-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #000;
+}
+
 .carrossel-btn {
     position: absolute;
     top: 50%;

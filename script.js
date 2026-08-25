@@ -351,8 +351,9 @@ document.addEventListener('DOMContentLoaded', function () {
     /* =========================================
        CARROSSEL DE FOTOS — Mural Interativo
        ========================================= */
-    var carrossel = document.querySelector('[data-carrossel]');
-    if (carrossel) {
+    var carrosseis = document.querySelectorAll('[data-carrossel]');
+
+    carrosseis.forEach(function (carrossel) {
         var faixa = carrossel.querySelector('[data-faixa]');
         var slides = faixa.children;
         var btnAnterior = carrossel.querySelector('[data-anterior]');
@@ -385,7 +386,13 @@ document.addEventListener('DOMContentLoaded', function () {
             indice = (i + total) % total;
             faixa.style.transform = 'translateX(-' + (indice * 100) + '%)';
             atualizarDots();
-            reiniciarAuto();
+            // Se o slide atual for um vídeo, pausa o auto-avanço;
+            // caso contrário, retoma o ciclo automático.
+            if (slides[indice].querySelector('video')) {
+                clearInterval(timer);
+            } else {
+                reiniciarAuto();
+            }
         }
 
         function autoAvancar() {
@@ -410,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         irPara(0);
-    }
+    }); // fim forEach carrossel
 
 }); // fim DOMContentLoaded
 
