@@ -348,6 +348,70 @@ document.addEventListener('DOMContentLoaded', function () {
     // Entrada — remove overlay ao carregar
     setTimeout(function () { overlay.classList.remove('saindo'); }, 50);
 
+    /* =========================================
+       CARROSSEL DE FOTOS — Mural Interativo
+       ========================================= */
+    var carrossel = document.querySelector('[data-carrossel]');
+    if (carrossel) {
+        var faixa = carrossel.querySelector('[data-faixa]');
+        var slides = faixa.children;
+        var btnAnterior = carrossel.querySelector('[data-anterior]');
+        var btnProximo = carrossel.querySelector('[data-proximo]');
+        var contDots = carrossel.querySelector('[data-dots]');
+        var indice = 0;
+        var total = slides.length;
+        var timer;
+
+        // Cria os indicadores (dots)
+        for (var d = 0; d < total; d++) {
+            var dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'carrossel-dot';
+            dot.setAttribute('aria-label', 'Ir para a foto ' + (d + 1));
+            (function (i) {
+                dot.addEventListener('click', function () { irPara(i); });
+            })(d);
+            contDots.appendChild(dot);
+        }
+        var dots = contDots.querySelectorAll('.carrossel-dot');
+
+        function atualizarDots() {
+            dots.forEach(function (dp, i) {
+                dp.classList.toggle('ativo', i === indice);
+            });
+        }
+
+        function irPara(i) {
+            indice = (i + total) % total;
+            faixa.style.transform = 'translateX(-' + (indice * 100) + '%)';
+            atualizarDots();
+            reiniciarAuto();
+        }
+
+        function autoAvancar() {
+            irPara(indice + 1);
+        }
+
+        function reiniciarAuto() {
+            clearInterval(timer);
+            timer = setInterval(autoAvancar, 5000);
+        }
+
+        if (btnAnterior) {
+            btnAnterior.addEventListener('click', function () { irPara(indice - 1); });
+        }
+        if (btnProximo) {
+            btnProximo.addEventListener('click', function () { irPara(indice + 1); });
+        }
+
+        // Recalcula o slide inicial no resize
+        window.addEventListener('resize', function () {
+            faixa.style.transform = 'translateX(-' + (indice * 100) + '%)';
+        });
+
+        irPara(0);
+    }
+
 }); // fim DOMContentLoaded
 
 /* =========================================
