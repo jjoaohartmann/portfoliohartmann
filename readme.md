@@ -4,11 +4,11 @@
 
 **Um espaço para reunir meus projetos, conquistas e a evolução da minha jornada de aprendizado.**
 
-[![Deploy na Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel&logoColor=white)](COLE-AQUI-O-LINK-DO-DEPLOY)
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfoliohartmann.vercel.app/)
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-brightgreen?style=for-the-badge)](#)
-[![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-blue?style=for-the-badge)](#-licença)
+[![Licença](https://img.shields.io/badge/licen%C3%A7a-Todos%20os%20direitos%20reservados-red?style=for-the-badge)](#-licença)
 
-### 🔗 [Acessar o portfólio online](COLE-AQUI-O-LINK-DO-DEPLOY)
+### 🔗 [Acessar o portfólio online](https://portfoliohartmann.vercel.app/)
 
 </div>
 
@@ -35,16 +35,8 @@ Este portfólio foi desenvolvido como parte da minha trajetória escolar, com o 
 
 Mais do que uma vitrine, ele representa a evolução do meu conhecimento em desenvolvimento web, aplicando na prática boas práticas de código, design responsivo e publicação em produção.
 
-## 🖼️ Demonstração
 
-> 💡 **Dica:** adicione aqui capturas de tela ou um GIF do projeto em funcionamento.
-
-<!--
-![Página inicial](./docs/preview-home.png)
-![Seção de projetos](./docs/preview-projetos.png)
--->
-
-🌐 **Projeto online:** [COLE-AQUI-O-LINK-DO-DEPLOY](COLE-AQUI-O-LINK-DO-DEPLOY)
+🌐 **Projeto online:** [https://portfoliohartmann.vercel.app/](https://portfoliohartmann.vercel.app/)
 
 ## ✨ Funcionalidades
 
@@ -56,8 +48,6 @@ Mais do que uma vitrine, ele representa a evolução do meu conhecimento em dese
 - ⚡ **Carregamento rápido** e publicação contínua na Vercel
 
 ## 🛠️ Tecnologias utilizadas
-
-> Ajuste a lista abaixo conforme as tecnologias que você realmente usou.
 
 | Categoria | Tecnologias |
 | --- | --- |
@@ -73,15 +63,19 @@ Mais do que uma vitrine, ele representa a evolução do meu conhecimento em dese
 
 ```
 portfolio-escolar/
-├── assets/
-│   ├── images/
-│   └── icons/
+├── arquivos/
 ├── css/
-│   └── style.css
-├── js/
-│   └── script.js
+├── imagem/
+├── materias/
+├── 404.html
+├── certificados.html
+├── contato.html
+├── Ensino-medio.html
 ├── index.html
-└── README.md
+├── readme.md
+├── script.js
+├── Tecnico.html
+└── vercel.json
 ```
 
 ## 🚀 Como executar localmente
@@ -89,64 +83,55 @@ portfolio-escolar/
 ### Pré-requisitos
 
 - [Git](https://git-scm.com/) instalado
-- Um navegador moderno (Chrome, Firefox, Edge...)
-- *(Opcional)* [Node.js](https://nodejs.org/) caso o projeto utilize um gerenciador de pacotes
 
 ### Passo a passo
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+git clone https://github.com/jjoaohartmann/portfoliohartmann.git
 
 # 2. Acesse a pasta do projeto
-cd NOME-DO-REPOSITORIO
+cd portfoliohartmann
 
 # 3. Abra o projeto no navegador
 # Basta abrir o arquivo index.html
 # ou usar a extensão Live Server do VS Code
 ```
 
-Caso o projeto use Node.js:
-
-```bash
-npm install
-npm run dev
-```
-
 ## ☁️ Deploy
 
-O projeto está publicado na **[Vercel](https://vercel.com/)**, com deploy automático a cada `push` na branch principal.
+O projeto está publicado na **[Vercel](portfoliohartmann.vercel.app)**, com deploy automático a cada `push` na branch principal.
 
-🔗 **Link de produção:** [COLE-AQUI-O-LINK-DO-DEPLOY](COLE-AQUI-O-LINK-DO-DEPLOY)
+🔗 **Link de produção:** [portfoliohartmann.vercel.app](portfoliohartmann.vercel.app)
 
 ## 🗺️ Roadmap
 
 - [x] Estrutura inicial do portfólio
 - [x] Publicação na Vercel
-- [ ] Adicionar novos projetos conforme forem concluídos
+- [x] Adicionar formulário de contato
+- [X] Adicionar novos projetos conforme forem concluídos
 - [ ] Melhorar acessibilidade e SEO
 - [ ] Incluir modo escuro
-- [ ] Adicionar formulário de contato
 
 ## 👨‍💻 Autor
 
-**João**
+**João Hartmann**
 
 Estudante de desenvolvimento, em constante evolução e focado em construir bons projetos.
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SEU-USUARIO)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/SEU-USUARIO)
-[![E-mail](https://img.shields.io/badge/E--mail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:SEU-EMAIL@exemplo.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jjoao_hartmann)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/joao-hartmann)
+[![E-mail](https://img.shields.io/badge/E--mail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:prangehartmannj@gmail.com)
 
 ## 📄 Licença
 
-Este projeto está sob a licença **MIT**. Consulte o arquivo `LICENSE` para mais detalhes.
+Copyright (c) 2026 João Victor prange Hartmann. Todos os direitos reservados. Nenhuma parte deste código pode ser modificada ou distribuída sem permissão expressa do autor.
 
 ---
 
 <div align="center">
 
-Feito com 💙 e muito aprendizado por **João**
+Feito por **João**
 
 ⭐ Se gostou do projeto, deixe uma estrela no repositório!
 
