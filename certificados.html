@@ -50,8 +50,16 @@
         <p style="text-align: center;">Aqui estão os certificados e cursos que obtenho ao longo da minha trajetória
             profissional.</p>
 
-        <!-- Container Principal de Certificados Premium -->
-        <div class="premium-certificados-grid">
+        <!-- Abas: Cursos / Olimpíadas -->
+        <div class="abas-container">
+            <button class="aba-btn ativo" onclick="abrirTrimestre(event, 'aba-cursos')">Cursos</button>
+            <button class="aba-btn" onclick="abrirTrimestre(event, 'aba-olimpiadas')">Olimpíadas</button>
+        </div>
+
+        <!-- ABA: CURSOS -->
+        <div id="aba-cursos" class="aba-conteudo" style="display: block;">
+            <div class="premium-certificados-grid">
+
 
             <!-- CERTIFICADO 1: Desenvolvimento Web -->
             <div class="premium-cert-item">
@@ -241,6 +249,16 @@
                 </div>
             </div>
 
+            </div>
+        </div>
+
+        <!-- ABA: OLIMPÍADAS -->
+        <div id="aba-olimpiadas" class="aba-conteudo">
+
+            <!-- Grupo 1: certificados que já estavam no portfólio -->
+            <h2 class="cert-grupo-titulo">Participações anteriores</h2>
+            <div class="premium-certificados-grid">
+
             <!-- CERTIFICADO 4: Olimpíada -->
             <div class="premium-cert-item">
                 <div class="cert-header-section">
@@ -295,6 +313,243 @@
                 </div>
             </div>
 
+            </div>
+
+            <!-- Grupo 2: certificados novos (pasta certificados_imagens) -->
+            <h2 class="cert-grupo-titulo">Olimpíada de Literatura – Novembro de 2026</h2>
+            <div class="premium-certificados-grid">
+
+            <!-- OLIMPÍADA: Pop 4: Harry Potter e o Prisioneiro de Azkaban -->
+            <div class="premium-cert-item">
+                <div class="cert-header-section">
+                    <div class="cert-title-group">
+                        <h3 class="cert-title">Pop 4: Harry Potter e o Prisioneiro de Azkaban</h3>
+                        <div class="cert-organization">
+                            <i class="ph ph-medal"></i>
+                            <span>Olimpíada de Literatura</span>
+                        </div>
+                    </div>
+                    <div class="cert-metadata">
+                        <div class="cert-meta-item">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>10 nov 2026</span>
+                        </div>
+                        <div class="cert-meta-item">
+                            <i class="ph ph-trophy"></i>
+                            <span>1000/1000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem do Certificado -->
+                <div class="cert-image-container">
+                    <img src="certificados_imagens/pop4_prisioneiro_azkaban_cert.png" alt="Certificado - Pop 4: Harry Potter e o Prisioneiro de Azkaban" loading="lazy">
+                </div>
+
+                <!-- Descrição -->
+                <div class="cert-content-section">
+                    <p class="cert-description" id="descPop4">Na competição Pop 4, dedicada ao livro Harry Potter e o Prisioneiro de Azkaban, obtive a pontuação máxima, 1000 de 1000 pontos, e conquistei o 1º lugar com medalha de ouro. A prova exigiu leitura atenta e memória de detalhes da obra, além da capacidade de interpretar passagens e relacioná-las ao enredo. O certificado foi emitido em Curitiba, em 19 de novembro de 2026, pelo Instituto Philotimia.</p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descPop4', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="cert-technologies">
+                        <span class="tech-tag">Ouro</span>
+                        <span class="tech-tag">1º lugar</span>
+                    </div>
+                </div>
+
+                <button class="cert-view-btn"
+                    onclick="openImageModal('certificados_imagens/pop4_prisioneiro_azkaban_cert.png', 'Certificado - Pop 4: Harry Potter e o Prisioneiro de Azkaban')">
+                    <i class="ph ph-magnifying-glass-plus"></i>
+                    <span>Ampliar</span>
+                </button>
+            </div>
+
+            <!-- OLIMPÍADA: Pop 5: Jogos Vorazes -->
+            <div class="premium-cert-item">
+                <div class="cert-header-section">
+                    <div class="cert-title-group">
+                        <h3 class="cert-title">Pop 5: Jogos Vorazes</h3>
+                        <div class="cert-organization">
+                            <i class="ph ph-medal"></i>
+                            <span>Olimpíada de Literatura</span>
+                        </div>
+                    </div>
+                    <div class="cert-metadata">
+                        <div class="cert-meta-item">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>10 nov 2026</span>
+                        </div>
+                        <div class="cert-meta-item">
+                            <i class="ph ph-trophy"></i>
+                            <span>884/1000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem do Certificado -->
+                <div class="cert-image-container">
+                    <img src="certificados_imagens/pop5_jogos_vorazes_cert.png" alt="Certificado - Pop 5: Jogos Vorazes" loading="lazy">
+                </div>
+
+                <!-- Descrição -->
+                <div class="cert-content-section">
+                    <p class="cert-description" id="descPop5">Na competição Pop 5, sobre a obra Jogos Vorazes, alcancei 884 de 1000 pontos e fui classificado em 225º lugar, conquistando menção honrosa. A prova exercitou a leitura crítica e a atenção aos detalhes da narrativa, aspectos que também trabalhamos nas atividades de Linguagens. O certificado foi emitido em Curitiba, em 19 de novembro de 2026, pelo Instituto Philotimia.</p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descPop5', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="cert-technologies">
+                        <span class="tech-tag">Menção Honrosa</span>
+                        <span class="tech-tag">225º lugar</span>
+                    </div>
+                </div>
+
+                <button class="cert-view-btn"
+                    onclick="openImageModal('certificados_imagens/pop5_jogos_vorazes_cert.png', 'Certificado - Pop 5: Jogos Vorazes')">
+                    <i class="ph ph-magnifying-glass-plus"></i>
+                    <span>Ampliar</span>
+                </button>
+            </div>
+
+            <!-- OLIMPÍADA: Cinema 14: Harry Potter -->
+            <div class="premium-cert-item">
+                <div class="cert-header-section">
+                    <div class="cert-title-group">
+                        <h3 class="cert-title">Cinema 14: Harry Potter</h3>
+                        <div class="cert-organization">
+                            <i class="ph ph-medal"></i>
+                            <span>Olimpíada de Literatura</span>
+                        </div>
+                    </div>
+                    <div class="cert-metadata">
+                        <div class="cert-meta-item">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>11 nov 2026</span>
+                        </div>
+                        <div class="cert-meta-item">
+                            <i class="ph ph-trophy"></i>
+                            <span>1000/1000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem do Certificado -->
+                <div class="cert-image-container">
+                    <img src="certificados_imagens/cinema14_HP_cert.png" alt="Certificado - Cinema 14: Harry Potter" loading="lazy">
+                </div>
+
+                <!-- Descrição -->
+                <div class="cert-content-section">
+                    <p class="cert-description" id="descCinema14">Na competição Cinema 14, dedicada à franquia Harry Potter, obtive a pontuação máxima, 1000 de 1000 pontos, e conquistei o 1º lugar com medalha de ouro. A prova integra literatura e cinema, pedindo análise de cenas e conhecimento dos elementos narrativos que conectam os livros às adaptações para as telas. O certificado foi emitido em Curitiba, em 19 de novembro de 2026, pelo Instituto Philotimia.</p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descCinema14', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="cert-technologies">
+                        <span class="tech-tag">Ouro</span>
+                        <span class="tech-tag">1º lugar</span>
+                    </div>
+                </div>
+
+                <button class="cert-view-btn"
+                    onclick="openImageModal('certificados_imagens/cinema14_HP_cert.png', 'Certificado - Cinema 14: Harry Potter')">
+                    <i class="ph ph-magnifying-glass-plus"></i>
+                    <span>Ampliar</span>
+                </button>
+            </div>
+
+            <!-- OLIMPÍADA: Cinema 15: Romance -->
+            <div class="premium-cert-item">
+                <div class="cert-header-section">
+                    <div class="cert-title-group">
+                        <h3 class="cert-title">Cinema 15: Romance</h3>
+                        <div class="cert-organization">
+                            <i class="ph ph-medal"></i>
+                            <span>Olimpíada de Literatura</span>
+                        </div>
+                    </div>
+                    <div class="cert-metadata">
+                        <div class="cert-meta-item">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>11 nov 2026</span>
+                        </div>
+                        <div class="cert-meta-item">
+                            <i class="ph ph-trophy"></i>
+                            <span>942/1000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem do Certificado -->
+                <div class="cert-image-container">
+                    <img src="certificados_imagens/cinema15_romance_cert.png" alt="Certificado - Cinema 15: Romance" loading="lazy">
+                </div>
+
+                <!-- Descrição -->
+                <div class="cert-content-section">
+                    <p class="cert-description" id="descCinema15">Na competição Cinema 15, sobre o gênero romance no cinema, fiz 942 de 1000 pontos e fui classificado em 63º lugar, conquistando medalha de prata. A prova pede interpretação de cenas e reconhecimento de características narrativas do gênero, unindo literatura e produções audiovisuais. O certificado foi emitido em Curitiba, em 19 de novembro de 2026, pelo Instituto Philotimia.</p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descCinema15', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="cert-technologies">
+                        <span class="tech-tag">Prata</span>
+                        <span class="tech-tag">63º lugar</span>
+                    </div>
+                </div>
+
+                <button class="cert-view-btn"
+                    onclick="openImageModal('certificados_imagens/cinema15_romance_cert.png', 'Certificado - Cinema 15: Romance')">
+                    <i class="ph ph-magnifying-glass-plus"></i>
+                    <span>Ampliar</span>
+                </button>
+            </div>
+
+            <!-- OLIMPÍADA: Interpretação 1: Interpretação de Textos -->
+            <div class="premium-cert-item">
+                <div class="cert-header-section">
+                    <div class="cert-title-group">
+                        <h3 class="cert-title">Interpretação 1: Interpretação de Textos</h3>
+                        <div class="cert-organization">
+                            <i class="ph ph-medal"></i>
+                            <span>Olimpíada de Literatura</span>
+                        </div>
+                    </div>
+                    <div class="cert-metadata">
+                        <div class="cert-meta-item">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>11 nov 2026</span>
+                        </div>
+                        <div class="cert-meta-item">
+                            <i class="ph ph-trophy"></i>
+                            <span>1000/1000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem do Certificado -->
+                <div class="cert-image-container">
+                    <img src="certificados_imagens/interpretacao_texto_cert.png" alt="Certificado - Interpretação 1: Interpretação de Textos" loading="lazy">
+                </div>
+
+                <!-- Descrição -->
+                <div class="cert-content-section">
+                    <p class="cert-description" id="descInterpretacao">Na competição Interpretação 1, voltada à interpretação de textos, obtive a pontuação máxima, 1000 de 1000 pontos, e conquistei o 1º lugar com medalha de ouro. A prova avalia a compreensão de ideias centrais, a leitura de informações implícitas e a análise de recursos da linguagem, habilidades essenciais na vida acadêmica e profissional. O certificado foi emitido em Curitiba, em 19 de novembro de 2026, pelo Instituto Philotimia.</p>
+                    <button class="cert-desc-toggle" onclick="toggleDescricao('descInterpretacao', this)">
+                        <span>Ver mais</span><i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="cert-technologies">
+                        <span class="tech-tag">Ouro</span>
+                        <span class="tech-tag">1º lugar</span>
+                    </div>
+                </div>
+
+                <button class="cert-view-btn"
+                    onclick="openImageModal('certificados_imagens/interpretacao_texto_cert.png', 'Certificado - Interpretação 1: Interpretação de Textos')">
+                    <i class="ph ph-magnifying-glass-plus"></i>
+                    <span>Ampliar</span>
+                </button>
+            </div>
+
+            </div>
         </div>
     </section>
 

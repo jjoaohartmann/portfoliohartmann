@@ -342,3 +342,21 @@
     border-top: var(--border-glass);
 }
 
+
+/* Abas e grupos da página de certificados */
+.cert-grupo-titulo {
+    max-width: 1100px;
+    margin: 48px auto 0;
+    padding: 0 20px 14px;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    text-align: left;
+    background: var(--grad-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cert-grupo-titulo + .premium-certificados-grid {
+    margin-top: 20px;
+}
