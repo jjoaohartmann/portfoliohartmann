@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia de apresentação do portfólio de João Hartmann — roteiro de 10 minutos pelos principais trabalhos do Ensino Médio integrado ao Técnico.">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/efeitos.css">
+    <link rel="stylesheet" href="css/guia.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="icon" type="image/png" href="imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Guia de Apresentação — João Hartmann</title>
+</head>
+
+<body>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loading-screen">
+        <img src="imagem/logoSite.png" alt="Logo" class="loading-logo">
+        <span class="loading-nome">João Hartmann</span>
+        <div class="loading-track"><div class="loading-fill"></div></div>
+    </div>
+
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="Tecnico.html">Técnico</a>
+                    <a href="Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="guia.html" aria-current="page">Guia</a></li>
+            <li><a href="contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <!-- CAPA COMPACTA -->
+    <section class="guia-capa">
+        <h1>Guia de Apresentação</h1>
+        <p>Roteiro visual para percorrer a jornada do Ensino Médio integrado ao Técnico em 10 minutos.</p>
+        <ul class="guia-stats">
+            <li><strong>10</strong><span>minutos</span></li>
+            <li><strong>5</strong><span>áreas</span></li>
+            <li><strong>10</strong><span>trabalhos</span></li>
+        </ul>
+        <p class="guia-atalhos"><kbd>←</kbd><kbd>→</kbd> trocar de seção &nbsp;·&nbsp; <kbd>T</kbd> iniciar / pausar o cronômetro</p>
+    </section>
+
+    <!-- NAVEGAÇÃO RÁPIDA + CRONÔMETRO
+         Os tempos de cada seção ficam em data-tempo (em segundos). Se mudar o roteiro, ajuste aqui:
+         1 min (sobre) + 5 x 1:40 (áreas) + 0:40 (conclusão) = 10 min. -->
+    <nav class="guia-nav" aria-label="Navegação rápida do guia">
+        <ol class="guia-nav-lista">
+                    <li><a href="#sobre" data-tempo="60" title="Tempo sugerido: 1:00 min"><span class="guia-nav-num">1</span>Sobre mim</a></li>
+                    <li><a href="#linguagens" data-tempo="100" title="Tempo sugerido: 1:40 min"><span class="guia-nav-num">2</span>Linguagens</a></li>
+                    <li><a href="#humanas" data-tempo="100" title="Tempo sugerido: 1:40 min"><span class="guia-nav-num">3</span>Humanas</a></li>
+                    <li><a href="#matematica" data-tempo="100" title="Tempo sugerido: 1:40 min"><span class="guia-nav-num">4</span>Matemática</a></li>
+                    <li><a href="#natureza" data-tempo="100" title="Tempo sugerido: 1:40 min"><span class="guia-nav-num">5</span>Natureza</a></li>
+                    <li><a href="#tecnica" data-tempo="100" title="Tempo sugerido: 1:40 min"><span class="guia-nav-num">6</span>Técnica</a></li>
+                    <li><a href="#conclusao" data-tempo="40" title="Tempo sugerido: 0:40 min"><span class="guia-nav-num">7</span>Conclusão</a></li>
+        </ol>
+        <div class="guia-timer" role="group" aria-label="Cronômetro da apresentação">
+            <div class="guia-timer-leitura">
+                <span class="guia-timer-tempo"><span id="guiaTempo">00:00</span> <small id="guiaTotal">/ 10:00</small></span>
+                <span class="guia-timer-status" id="guiaStatus">Pronto para começar</span>
+            </div>
+            <div class="guia-timer-acoes">
+                <button type="button" class="guia-timer-btn principal" id="guiaPlay" aria-label="Iniciar cronômetro" title="Iniciar (T)">▶</button>
+                <button type="button" class="guia-timer-btn" id="guiaReset" aria-label="Zerar cronômetro" title="Zerar">↺</button>
+            </div>
+        </div>
+        <div class="guia-progresso" aria-hidden="true"><div class="guia-progresso-fill" id="guiaFill"></div></div>
+    </nav>
+
+    <main class="guia-main">
+
+        <!-- ============ 1. SOBRE MIM (1:00) ============ -->
+        <section class="guia-secao" id="sobre" aria-labelledby="titulo-sobre">
+            <div class="guia-container">
+                <div class="guia-sobre-layout">
+                    <!-- EDITE: foto (troque o arquivo em imagem/ ou o caminho do src) -->
+                    <div class="guia-foto">
+                        <img src="imagem/perfil1.jpg" alt="Foto de João Hartmann"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder-foto.svg'">
+                    </div>
+                    <div class="guia-sobre-texto">
+                        <p class="guia-eyebrow">1 · Apresentação · tempo sugerido 1:00</p>
+                        <h2 id="titulo-sobre">João Victor Prange Hartmann</h2>
+                        <!-- EDITE: nome oficial do curso técnico -->
+                        <p class="guia-curso">Ensino Médio integrado ao Técnico em Informática · SESI SENAI</p>
+                        <!-- EDITE: resumo de 1 ou 2 frases para a fala de abertura -->
+                        <p class="guia-lead">Estudante com curiosidade por tecnologia que começou como Jovem Aprendiz e aprendeu, na prática, o valor do trabalho em equipe e da proatividade.</p>
+                        <div class="guia-pontos">
+                            <div class="guia-ponto">
+                                <h4>Trajetória</h4>
+                                <p>3 anos de Ensino Médio com formação técnica em paralelo.</p>
+                            </div>
+                            <div class="guia-ponto">
+                                <h4>Perfil</h4>
+                                <p>Curioso, colaborativo e movido por aprender e ajudar.</p>
+                            </div>
+                            <div class="guia-ponto">
+                                <h4>Próximo passo</h4>
+                                <p>Faculdade: Engenharia de Software (ou Agronomia).</p>
+                            </div>
+                        </div>
+                        <div class="guia-chips">
+                            <span class="guia-tag">Ensino Médio + Técnico</span>
+                            <span class="guia-tag">Jovem Aprendiz</span>
+                            <span class="guia-tag">Desenvolvimento web</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 2. LINGUAGENS ============ -->
+        <section class="guia-secao" id="linguagens" aria-labelledby="titulo-linguagens">
+            <div class="guia-container">
+                <div class="guia-area-topo">
+                    <span class="guia-area-num" aria-hidden="true">02</span>
+                    <div class="guia-area-titulo">
+                        <p class="guia-eyebrow">Área do conhecimento</p>
+                        <h2 id="titulo-linguagens">Linguagens</h2>
+                    </div>
+                    <div class="guia-area-meta">
+                        <span class="guia-tag">2 trabalhos</span>
+                        <span class="guia-tag">Tempo sugerido: 1:40</span>
+                    </div>
+                </div>
+                <div class="guia-grid">
+                <!-- EDITE: trabalho 01 de 10 (Linguagens) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/linguagens-1.jpg" alt="Prévia do trabalho: Título do trabalho 1 — Linguagens" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">1º ano</span>
+                        <span class="guia-card-idx">01 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 1 — Linguagens</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/linguagens.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <!-- EDITE: trabalho 02 de 10 (Linguagens) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/linguagens-2.jpg" alt="Prévia do trabalho: Título do trabalho 2 — Linguagens" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">3º ano</span>
+                        <span class="guia-card-idx">02 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 2 — Linguagens</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/linguagens.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 3. CIÊNCIAS HUMANAS ============ -->
+        <section class="guia-secao" id="humanas" aria-labelledby="titulo-humanas">
+            <div class="guia-container">
+                <div class="guia-area-topo">
+                    <span class="guia-area-num" aria-hidden="true">03</span>
+                    <div class="guia-area-titulo">
+                        <p class="guia-eyebrow">Área do conhecimento</p>
+                        <h2 id="titulo-humanas">Ciências Humanas</h2>
+                    </div>
+                    <div class="guia-area-meta">
+                        <span class="guia-tag">2 trabalhos</span>
+                        <span class="guia-tag">Tempo sugerido: 1:40</span>
+                    </div>
+                </div>
+                <div class="guia-grid">
+                <!-- EDITE: trabalho 03 de 10 (Ciências Humanas) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/humanas-1.jpg" alt="Prévia do trabalho: Título do trabalho 1 — Ciências Humanas" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">1º ano</span>
+                        <span class="guia-card-idx">03 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 1 — Ciências Humanas</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/humanas.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <!-- EDITE: trabalho 04 de 10 (Ciências Humanas) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/humanas-2.jpg" alt="Prévia do trabalho: Título do trabalho 2 — Ciências Humanas" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">2º ano</span>
+                        <span class="guia-card-idx">04 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 2 — Ciências Humanas</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/humanas.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 4. MATEMÁTICA ============ -->
+        <section class="guia-secao" id="matematica" aria-labelledby="titulo-matematica">
+            <div class="guia-container">
+                <div class="guia-area-topo">
+                    <span class="guia-area-num" aria-hidden="true">04</span>
+                    <div class="guia-area-titulo">
+                        <p class="guia-eyebrow">Área do conhecimento</p>
+                        <h2 id="titulo-matematica">Matemática</h2>
+                    </div>
+                    <div class="guia-area-meta">
+                        <span class="guia-tag">2 trabalhos</span>
+                        <span class="guia-tag">Tempo sugerido: 1:40</span>
+                    </div>
+                </div>
+                <div class="guia-grid">
+                <!-- EDITE: trabalho 05 de 10 (Matemática) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/matematica-1.jpg" alt="Prévia do trabalho: Título do trabalho 1 — Matemática" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">2º ano</span>
+                        <span class="guia-card-idx">05 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 1 — Matemática</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/matematica.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <!-- EDITE: trabalho 06 de 10 (Matemática) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/matematica-2.jpg" alt="Prévia do trabalho: Título do trabalho 2 — Matemática" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">3º ano</span>
+                        <span class="guia-card-idx">06 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 2 — Matemática</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/matematica.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 5. CIÊNCIAS DA NATUREZA ============ -->
+        <section class="guia-secao" id="natureza" aria-labelledby="titulo-natureza">
+            <div class="guia-container">
+                <div class="guia-area-topo">
+                    <span class="guia-area-num" aria-hidden="true">05</span>
+                    <div class="guia-area-titulo">
+                        <p class="guia-eyebrow">Área do conhecimento</p>
+                        <h2 id="titulo-natureza">Ciências da Natureza</h2>
+                    </div>
+                    <div class="guia-area-meta">
+                        <span class="guia-tag">2 trabalhos</span>
+                        <span class="guia-tag">Tempo sugerido: 1:40</span>
+                    </div>
+                </div>
+                <div class="guia-grid">
+                <!-- EDITE: trabalho 07 de 10 (Ciências da Natureza) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/natureza-1.jpg" alt="Prévia do trabalho: Título do trabalho 1 — Ciências da Natureza" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">1º ano</span>
+                        <span class="guia-card-idx">07 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 1 — Ciências da Natureza</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/natureza.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <!-- EDITE: trabalho 08 de 10 (Ciências da Natureza) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/natureza-2.jpg" alt="Prévia do trabalho: Título do trabalho 2 — Ciências da Natureza" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">3º ano</span>
+                        <span class="guia-card-idx">08 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 2 — Ciências da Natureza</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/natureza.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 6. ÁREA TÉCNICA ============ -->
+        <section class="guia-secao" id="tecnica" aria-labelledby="titulo-tecnica">
+            <div class="guia-container">
+                <div class="guia-area-topo">
+                    <span class="guia-area-num" aria-hidden="true">06</span>
+                    <div class="guia-area-titulo">
+                        <p class="guia-eyebrow">Área do conhecimento</p>
+                        <h2 id="titulo-tecnica">Área Técnica</h2>
+                    </div>
+                    <div class="guia-area-meta">
+                        <span class="guia-tag">2 trabalhos</span>
+                        <span class="guia-tag">Tempo sugerido: 1:40</span>
+                    </div>
+                </div>
+                <div class="guia-grid">
+                <!-- EDITE: trabalho 09 de 10 (Área Técnica) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/tecnica-1.jpg" alt="Prévia do trabalho: Título do trabalho 1 — Área Técnica" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">2º ano</span>
+                        <span class="guia-card-idx">09 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 1 — Área Técnica</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/desenvolvimento.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <!-- EDITE: trabalho 10 de 10 (Área Técnica) -->
+                <article class="guia-card">
+                    <div class="guia-card-img">
+                        <img src="imagem/guia/tecnica-2.jpg" alt="Prévia do trabalho: Título do trabalho 2 — Área Técnica" loading="lazy"
+                            onerror="this.onerror=null;this.src='imagem/guia/placeholder.svg'">
+                        <span class="guia-ano">3º ano</span>
+                        <span class="guia-card-idx">10 / 10</span>
+                    </div>
+                    <div class="guia-card-corpo">
+                        <h3>Título do trabalho 2 — Área Técnica</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Objetivo:</strong> uma frase sobre o tema ou problema proposto.</li>
+                            <li><strong>Minha entrega:</strong> o que eu criei, analisei ou apresentei.</li>
+                            <li><strong>Aprendizado:</strong> a habilidade ou conceito que ficou.</li>
+                        </ul>
+                        <a class="guia-btn" href="materias/banco.html" target="_blank" rel="noopener">Abrir projeto completo <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 7. CONCLUSÃO DA JORNADA (0:40) ============ -->
+        <section class="guia-secao" id="conclusao" aria-labelledby="titulo-conclusao">
+            <div class="guia-container">
+                <div class="guia-area-topo">
+                    <span class="guia-area-num" aria-hidden="true">07</span>
+                    <div class="guia-area-titulo">
+                        <p class="guia-eyebrow">Fechamento</p>
+                        <h2 id="titulo-conclusao">Conclusão da Jornada</h2>
+                    </div>
+                    <div class="guia-area-meta">
+                        <span class="guia-tag">Tempo sugerido: 0:40</span>
+                    </div>
+                </div>
+
+                <!-- EDITE: frase de abertura da conclusão -->
+                <p class="guia-intro">Em uma frase: o que mudou entre o meu primeiro dia e hoje, e o que eu levo dessa jornada.</p>
+
+                <div class="guia-linha-tempo">
+                    <!-- EDITE: um marco por ano (o primeiro tópico já cita o portfólio de cada ano) -->
+                    <article class="guia-marco">
+                        <span class="guia-ano">1º ano</span>
+                        <h3>Descobrindo</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Entrega:</strong> portfólio feito no Canva.</li>
+                            <li><strong>Aprendi:</strong> o que mais marcou nesse ano.</li>
+                        </ul>
+                    </article>
+                    <article class="guia-marco">
+                        <span class="guia-ano">2º ano</span>
+                        <h3>Praticando</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Entrega:</strong> portfólio feito no Google Sites.</li>
+                            <li><strong>Aprendi:</strong> o que mais marcou nesse ano.</li>
+                        </ul>
+                    </article>
+                    <article class="guia-marco">
+                        <span class="guia-ano">3º ano</span>
+                        <h3>Construindo</h3>
+                        <ul class="guia-topicos">
+                            <li><strong>Entrega:</strong> este portfólio em HTML, CSS e JavaScript.</li>
+                            <li><strong>Aprendi:</strong> o que mais marcou nesse ano.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="guia-aprendizados">
+                    <h3>Aprendizados-chave</h3>
+                    <!-- EDITE: 3 a 5 palavras-chave -->
+                    <div class="guia-chips">
+                        <span class="guia-tag">Trabalho em equipe</span>
+                        <span class="guia-tag">Autonomia</span>
+                        <span class="guia-tag">Resolução de problemas</span>
+                        <span class="guia-tag">Comunicação</span>
+                    </div>
+                </div>
+
+                <div class="guia-final">
+                    <!-- EDITE: mensagem final -->
+                    <h3>Obrigado pela atenção!</h3>
+                    <p>Uma mensagem curta de encerramento: agradecimentos e o que vem a seguir. Fico à disposição para perguntas.</p>
+                    <div class="guia-final-botoes">
+                        <a class="guia-btn" href="index.html#Portfolio">Ver portfólio completo <span aria-hidden="true">→</span></a>
+                        <a class="guia-btn guia-btn-sec" href="contato.html">Entrar em contato</a>
+                        <a class="guia-btn guia-btn-sec" href="#sobre">Voltar ao início do guia</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="Contatos">
+        <p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="guia.js"></script>
+</body>
+
+</html>

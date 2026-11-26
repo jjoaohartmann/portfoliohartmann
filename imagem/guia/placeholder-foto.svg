@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Foto (substitua)">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1b4b"/><stop offset="1" stop-color="#3b1f7a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#g)"/>
+  <circle cx="200" cy="155" r="62" fill="#A78BFA" fill-opacity="0.85"/>
+  <path d="M70 400 C70 300 130 262 200 262 C270 262 330 300 330 400 Z" fill="#818CF8" fill-opacity="0.85"/>
+</svg>

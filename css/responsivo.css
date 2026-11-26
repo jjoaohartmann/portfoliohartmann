@@ -283,3 +283,12 @@
 
     .erro-codigo { font-size: clamp(72px, 22vw, 120px); }
 }
+
+/* -----------------------------------------------------------------------
+   NAVBAR COM 5 ITENS (769px – 880px): compacta para caber na pílula
+   ----------------------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 880px) {
+    .nav-bar { padding: 12px 24px; }
+    .topic { gap: 18px; }
+    .topic a { font-size: 14px; }
+}

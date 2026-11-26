@@ -1,0 +1,801 @@
+/* ==========================================================================
+   GUIA — Roteiro visual da apresentação (10 minutos)
+   Usa os design tokens de base.css (cores, raios, sombras, tipografia).
+   ========================================================================== */
+
+/* Offsets usados pela barra fixa e pelas âncoras (ajustados via JS em guia.js) */
+:root {
+    --guia-topo: 88px;    /* altura ocupada pela navbar principal */
+    --guia-alt: 62px;     /* altura da barra de navegação do guia */
+}
+
+/* =========================================
+   1. CAPA COMPACTA
+   ========================================= */
+.guia-capa {
+    padding: 128px 24px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.guia-capa::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 90% at 50% 100%, rgba(79, 70, 229, 0.14) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.guia-capa > * { position: relative; z-index: 2; }
+
+.guia-capa h1 {
+    font-size: clamp(30px, 5.5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: var(--grad-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+}
+
+.guia-capa p {
+    max-width: 640px;
+    margin: 0 auto;
+    color: var(--clr-text-muted);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.guia-stats {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+.guia-stats li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 10px 22px;
+    background: var(--clr-surface-md);
+    border: var(--border-glass);
+    border-radius: var(--radius-pill);
+}
+
+.guia-stats strong {
+    font-size: 22px;
+    font-weight: 800;
+    background: var(--grad-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.guia-stats span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--clr-text-muted);
+    letter-spacing: 0.3px;
+}
+
+.guia-atalhos {
+    margin-top: 18px !important;
+    font-size: 13px !important;
+    color: var(--clr-text-dim) !important;
+}
+
+.guia-atalhos kbd {
+    display: inline-block;
+    min-width: 24px;
+    padding: 1px 7px;
+    margin: 0 2px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--clr-text);
+    background: var(--clr-surface-md);
+    border: var(--border-glass);
+    border-bottom-width: 2px;
+    border-radius: 6px;
+}
+
+/* =========================================
+   2. NAVEGAÇÃO RÁPIDA + CRONÔMETRO (fixa no topo ao rolar)
+   ========================================= */
+.guia-nav {
+    position: sticky;
+    top: var(--guia-topo);
+    z-index: 900;
+    width: min(1180px, 94%);
+    margin: 0 auto 8px;
+    padding: 10px 14px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--border-glass);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md), var(--shadow-glow-sm);
+}
+
+.guia-nav-lista {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 2px;
+}
+
+.guia-nav-lista::-webkit-scrollbar { display: none; }
+
+.guia-nav-lista a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px 6px 6px;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    color: var(--clr-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s var(--ease-spring);
+}
+
+.guia-nav-lista a:hover {
+    color: var(--clr-violet-lt);
+    background: rgba(79, 70, 229, 0.18);
+}
+
+.guia-nav-lista a.ativo {
+    background: var(--grad-accent);
+    color: var(--clr-white);
+    box-shadow: 0 4px 18px rgba(79, 70, 229, 0.45);
+}
+
+.guia-nav-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--clr-surface-md);
+    flex-shrink: 0;
+}
+
+.guia-nav-lista a.ativo .guia-nav-num { background: rgba(255, 255, 255, 0.22); }
+
+/* Cronômetro */
+.guia-timer-acoes { display: flex; gap: 8px; }
+
+.guia-timer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    padding-left: 14px;
+    border-left: var(--border-glass);
+}
+
+.guia-timer-leitura {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 140px;
+    line-height: 1.15;
+}
+
+.guia-timer-tempo {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--clr-white);
+    font-variant-numeric: tabular-nums;
+}
+
+.guia-timer-tempo small {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--clr-text-dim);
+}
+
+.guia-timer-status {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--clr-text-muted);
+}
+
+.guia-timer.adiantado .guia-timer-status { color: #34d399; }
+.guia-timer.atrasado .guia-timer-status,
+.guia-timer.atrasado .guia-timer-tempo { color: #fbbf24; }
+.guia-timer.estourou .guia-timer-status,
+.guia-timer.estourou .guia-timer-tempo { color: #f87171; }
+
+.guia-timer-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: var(--border-glass);
+    background: var(--clr-surface-md);
+    color: var(--clr-text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s var(--ease-spring);
+}
+
+.guia-timer-btn:hover {
+    background: var(--grad-accent);
+    color: var(--clr-white);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.guia-timer-btn.principal {
+    background: var(--grad-accent);
+    color: var(--clr-white);
+    border-color: transparent;
+    box-shadow: 0 4px 18px rgba(79, 70, 229, 0.45);
+}
+
+/* Barra de tempo com marcas nas divisas de cada seção */
+.guia-progresso {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 5px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.guia-progresso-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--grad-glow);
+    border-radius: 999px;
+    transition: width 0.3s linear;
+}
+
+.guia-timer-marca {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(8, 8, 24, 0.9);
+}
+
+/* =========================================
+   3. SEÇÕES (faixas alternadas, como no resto do site)
+   ========================================= */
+.guia-main { display: block; }
+
+.guia-secao {
+    padding: 64px 20px 72px;
+    scroll-margin-top: calc(var(--guia-topo) + var(--guia-alt) - 24px);
+}
+
+.guia-main > .guia-secao:nth-child(odd) { background: var(--clr-bg-alt); }
+
+.guia-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.guia-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--clr-indigo-lt);
+    margin-bottom: 6px;
+}
+
+/* Cabeçalho de cada área */
+.guia-area-topo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.guia-area-num {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--clr-white);
+    background: var(--grad-accent);
+    box-shadow: 0 4px 18px rgba(79, 70, 229, 0.45);
+}
+
+.guia-area-titulo h2 {
+    font-size: clamp(24px, 3.6vw, 38px);
+    font-weight: 800;
+    background: var(--grad-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.guia-area-meta {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.guia-tag {
+    background: rgba(79, 70, 229, 0.12);
+    color: var(--clr-indigo-lt);
+    border: 1px solid rgba(79, 70, 229, 0.22);
+    border-radius: var(--radius-pill);
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+/* =========================================
+   4. SOBRE MIM
+   ========================================= */
+.guia-sobre-layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.guia-foto {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid transparent;
+    background:
+        linear-gradient(var(--clr-bg-alt), var(--clr-bg-alt)) padding-box,
+        var(--grad-accent) border-box;
+    box-shadow: var(--shadow-glow);
+    transition: transform 0.5s var(--ease-out), box-shadow 0.5s ease;
+}
+
+.guia-foto:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 60px rgba(124, 58, 237, 0.4);
+}
+
+.guia-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 15%;
+    display: block;
+}
+
+.guia-sobre-texto h2 {
+    font-size: clamp(28px, 4.4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: var(--grad-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+
+.guia-curso {
+    color: var(--clr-indigo-lt);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.guia-lead {
+    color: var(--clr-text-muted);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.guia-pontos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.guia-ponto {
+    background: var(--clr-surface-md);
+    border: var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+}
+
+.guia-ponto h4 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-indigo-lt);
+    margin-bottom: 8px;
+}
+
+.guia-ponto p {
+    color: var(--clr-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.guia-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =========================================
+   5. CARDS DOS TRABALHOS
+   ========================================= */
+.guia-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.guia-card {
+    background: var(--clr-surface);
+    border: var(--border-glass);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
+}
+
+.guia-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-sm);
+}
+
+.guia-card-img {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--clr-bg-alt);
+}
+
+.guia-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: transform 0.6s var(--ease-out), filter 0.4s ease;
+}
+
+.guia-card:hover .guia-card-img img {
+    transform: scale(1.06);
+    filter: brightness(1);
+}
+
+.guia-ano {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: var(--grad-accent);
+    color: var(--clr-white);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.5);
+}
+
+.guia-card-idx {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    background: rgba(8, 8, 24, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: var(--border-glass);
+    color: var(--clr-text);
+    font-size: 12px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.guia-card-corpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+    padding: 22px 24px 26px;
+}
+
+.guia-card-corpo h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--clr-white);
+}
+
+.guia-topicos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.guia-topicos li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--clr-text-muted);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.guia-topicos li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--grad-accent);
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.5);
+}
+
+.guia-topicos strong {
+    color: var(--clr-white);
+    font-weight: 600;
+}
+
+/* Botões (mesmo padrão de .btn-acessar / .btn-secundario do site) */
+.guia-btn {
+    align-self: flex-start;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    border-radius: var(--radius-pill);
+    background: var(--grad-accent);
+    color: var(--clr-white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 18px rgba(79, 70, 229, 0.4);
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+}
+
+.guia-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(79, 70, 229, 0.6);
+}
+
+.guia-btn-sec {
+    background: var(--clr-surface-md);
+    color: var(--clr-text);
+    border: var(--border-glass);
+    box-shadow: none;
+}
+
+.guia-btn-sec:hover {
+    background: var(--grad-accent);
+    color: var(--clr-white);
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4);
+}
+
+/* =========================================
+   6. CONCLUSÃO DA JORNADA
+   ========================================= */
+.guia-intro {
+    max-width: 720px;
+    color: var(--clr-text-muted);
+    font-size: 17px;
+    line-height: 1.8;
+    margin: -8px 0 32px;
+}
+
+.guia-linha-tempo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.guia-marco {
+    position: relative;
+    background: var(--clr-surface);
+    border: var(--border-glass);
+    border-radius: var(--radius-lg);
+    padding: 26px 24px 28px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
+}
+
+.guia-marco::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--grad-glow);
+}
+
+.guia-marco:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-sm);
+}
+
+.guia-marco .guia-ano {
+    position: static;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.guia-marco h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.guia-aprendizados {
+    margin-top: 32px;
+}
+
+.guia-aprendizados h3 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--clr-indigo-lt);
+    margin-bottom: 14px;
+}
+
+.guia-final {
+    margin-top: 40px;
+    text-align: center;
+    padding: 44px 32px;
+    background: var(--clr-surface-md);
+    border: var(--border-glass);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md), var(--shadow-glow-sm);
+}
+
+.guia-final h3 {
+    font-size: clamp(22px, 3.4vw, 34px);
+    font-weight: 800;
+    background: var(--grad-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+}
+
+.guia-final p {
+    max-width: 640px;
+    margin: 0 auto 26px;
+    color: var(--clr-text-muted);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.guia-final-botoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.guia-final-botoes .guia-btn { margin-top: 0; align-self: auto; }
+
+/* =========================================
+   7. RESPONSIVO
+   ========================================= */
+@media (max-width: 1024px) {
+    .guia-sobre-layout { gap: 36px; }
+    .guia-foto { width: 240px; height: 240px; }
+    .guia-pontos { grid-template-columns: 1fr; }
+    .guia-linha-tempo { gap: 18px; }
+}
+
+/* Barra do guia em duas linhas: atalhos em cima, cronômetro embaixo */
+@media (max-width: 1240px) {
+    .guia-nav {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 8px 12px 14px;
+    }
+    .guia-nav-lista { flex: 1 1 100%; }
+    .guia-timer {
+        flex: 1 1 100%;
+        justify-content: space-between;
+        padding: 6px 4px 0;
+        border-left: none;
+        border-top: var(--border-glass);
+    }
+    .guia-timer-leitura { flex-direction: row; align-items: baseline; gap: 12px; min-width: 0; flex-wrap: wrap; }
+    .guia-timer-tempo { font-size: 18px; }
+    .guia-timer-btn { width: 32px; height: 32px; font-size: 13px; }
+}
+
+@media (max-width: 768px) {
+    :root { --guia-topo: 70px; }
+
+    .guia-capa { padding: 104px 20px 28px; }
+    .guia-capa p { font-size: 15px; }
+    .guia-stats li { padding: 8px 18px; }
+    .guia-atalhos { display: none; }
+
+    .guia-secao { padding: 48px 16px 56px; }
+
+    .guia-grid { grid-template-columns: 1fr; gap: 22px; }
+
+    .guia-sobre-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 28px;
+    }
+    .guia-foto { width: 200px; height: 200px; }
+    .guia-pontos { text-align: left; }
+    .guia-chips { justify-content: center; }
+
+    .guia-area-meta { margin-left: 0; width: 100%; }
+
+    .guia-linha-tempo { grid-template-columns: 1fr; }
+    .guia-final { padding: 34px 22px; }
+}
+
+@media (max-width: 480px) {
+    .guia-stats { gap: 8px; }
+    .guia-stats li { padding: 7px 14px; gap: 6px; }
+    .guia-stats strong { font-size: 18px; }
+    .guia-stats span { font-size: 12px; }
+
+    .guia-nav { padding: 8px 10px 14px; border-radius: var(--radius-md); }
+    .guia-nav-lista a { font-size: 12px; padding: 5px 11px 5px 5px; }
+
+    .guia-area-num { width: 46px; height: 46px; font-size: 18px; border-radius: 14px; }
+    .guia-card-corpo { padding: 18px 18px 22px; }
+    .guia-card-corpo h3 { font-size: 18px; }
+    .guia-topicos li { font-size: 14px; }
+    .guia-btn { align-self: stretch; justify-content: center; }
+    .guia-foto { width: 170px; height: 170px; }
+    .guia-lead { font-size: 15px; }
+    .guia-final-botoes .guia-btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .guia-card, .guia-marco, .guia-foto, .guia-card-img img { transition: none; }
+}

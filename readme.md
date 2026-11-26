@@ -44,6 +44,7 @@ Mais do que uma vitrine, ele representa a evolução do meu conhecimento em dese
 - 🧑‍💻 **Seção "Sobre mim"** com apresentação pessoal e formação
 - 🗂️ **Galeria de projetos** com descrição e links
 - 🛠️ **Habilidades e tecnologias** que venho estudando
+- 🎤 **Guia de apresentação** com roteiro de 10 minutos, navegação rápida e cronômetro (`guia.html`)
 - 📬 **Contato** com links para redes profissionais
 - ⚡ **Carregamento rápido** e publicação contínua na Vercel
 
@@ -71,6 +72,8 @@ portfolio-escolar/
 ├── certificados.html
 ├── contato.html
 ├── Ensino-medio.html
+├── guia.html
+├── guia.js
 ├── index.html
 ├── readme.md
 ├── script.js
