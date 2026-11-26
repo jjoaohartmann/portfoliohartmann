@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/efeitos.css">
+    <link rel="stylesheet" href="../css/materias.css">
+    <link rel="stylesheet" href="../css/responsivo.css">
+    <link rel="icon" type="image/png" href="../imagem/logoSite.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Testes de Sistemas</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <ul class="topic">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../certificados.html">Certificados</a></li>
+            <li class="menu-dropdown">
+                <a href="#" class="dropbtn" onclick="toggleMenu(event)">Áreas do Conhecimento <span
+                        class="seta">▼</span></a>
+                <div class="dropdown-conteudo" id="meuDropdown">
+                    <a href="../Tecnico.html">Técnico</a>
+                    <a href="../Ensino-medio.html">Ensino Médio</a>
+                </div>
+            </li>
+            <li><a href="../guia.html">Guia</a></li>
+            <li><a href="../contato.html">Entre em Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="capa-interna">
+        <h1>Testes de Sistemas</h1>
+        <p>Bem-vindo(a) à seção de Testes de Sistemas. Verificar se um software funciona como esperado, antes de chegar ao usuário, é fundamental para garantir qualidade e confiabilidade. Nesta página, reuni um compilado dos meus principais trabalhos e projetos práticos que demonstram minha evolução e o domínio dos conceitos trabalhados durante o ano letivo. Confira as atividades abaixo.</p>
+    </section>
+
+    <div class="abas-container">
+        <button class="aba-btn ativo" onclick="abrirTrimestre(event, 'trimestre3')">3º Trimestre</button>
+    </div>
+
+    <div id="trimestre3" class="aba-conteudo" style="display: block;">
+
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Slide de Testes</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+                    <iframe class="atividade-video" loading="lazy"
+                        src="https://www.canva.com/design/DAHZG87uNoQ/radTEmf5UoH_xmtD_Tz_Ug/view?embed"
+                        allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                    <div class="atividade-conteudo">
+                        <h3>Slide de Testes</h3>
+                        <p>Apresentação elaborada na disciplina de Testes de Sistemas, reunindo os conceitos e as práticas trabalhadas no 3º trimestre.</p>
+                        <div class="btn-acesso">
+                            <a href="https://canva.link/rwqdsjny7ltwzdm" target="_blank" rel="noopener noreferrer" class="btn-card">Ver Slide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="materia-secao">
+            <div class="secao-header">
+                <h2>Hackathon Tech SC</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-card">
+                    <iframe class="atividade-video" loading="lazy" src="https://drive.google.com/file/d/1vrAXDwuK-9FkiXGZX-zOs9V1vQW4728l/preview"
+                        allowfullscreen="allowfullscreen" allow="autoplay; fullscreen"></iframe>
+                    <div class="atividade-conteudo">
+                        <h3>Hackathon NSC TV e JA</h3>
+                        <p>O hackathon foi realizado em parceria com a NSC TV, no programa Tech SC, e com a Junior Achievement (JA). O desafio era buscar formas de trazer mais patrocínio para dar continuidade ao programa e, ao mesmo tempo, atrair mais jovens para ele. A entrega final foi um pitch, e o protótipo apresentado junto foi um diferencial. Foi uma experiência de trabalho em equipe e de criação de uma solução inovadora e funcional sob prazo, unindo a parte técnica de sistemas com a comunicação da ideia.</p>
+                        <div class="btn-acesso">
+                            <a href="https://drive.google.com/file/d/1vrAXDwuK-9FkiXGZX-zOs9V1vQW4728l/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-card">Ver vídeo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer id="Contatos">
+        <p>&copy; 2026 João Hartmann. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>
