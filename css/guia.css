@@ -799,3 +799,14 @@
 @media (prefers-reduced-motion: reduce) {
     .guia-card, .guia-marco, .guia-foto, .guia-card-img img { transition: none; }
 }
+
+/* Prévia ao vivo (iframe) dentro do card */
+.guia-card-img iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: var(--clr-bg-alt);
+}
