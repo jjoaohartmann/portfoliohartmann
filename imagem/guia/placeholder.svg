@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-label="Imagem do trabalho (substitua)">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1b4b"/>
+      <stop offset="0.55" stop-color="#2a1d63"/>
+      <stop offset="1" stop-color="#3b1f7a"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0.2" cy="0.1" r="0.8">
+      <stop offset="0" stop-color="#4F46E5" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#4F46E5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#g)"/>
+  <rect width="1280" height="800" fill="url(#r)"/>
+  <rect x="40" y="40" width="1200" height="720" rx="28" fill="none" stroke="#818CF8" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="14 12"/>
+  <g transform="translate(640 340)" fill="none" stroke="#A78BFA" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-120" y="-90" width="240" height="180" rx="22"/>
+    <circle cx="-52" cy="-34" r="20" fill="#A78BFA" stroke="none"/>
+    <path d="M-120 60 L-40 -10 L10 38 L52 4 L120 66"/>
+  </g>
+  <text x="640" y="555" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="46" font-weight="700" fill="#E2E8F0">Imagem do trabalho</text>
+  <text x="640" y="610" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="28" fill="#94A3B8">Substitua por um print ou foto (1280 × 800 px)</text>
+</svg>
